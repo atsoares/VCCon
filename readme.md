@@ -1,4 +1,4 @@
-# SGP Web
+# VCCon
 
 [![build status](http://gitlab.tcm.ce.gov.br/DITEC/access/badges/master/build.svg)](http://gitlab.tcm.ce.gov.br/DITEC/access/commits/master)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
