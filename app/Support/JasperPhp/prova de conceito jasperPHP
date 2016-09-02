@@ -1,0 +1,62 @@
+O pacote jasperPHP funciona na compilação e processamento de JasperReports (.jrxml)
+
+Use o Jaspersoft Studio para criar o relatório, faça conexão com o banco, faça a chamada das funções e tenha o relatório nos seguintes formatos:
+pdf, rtf, xls, xlsx, docx, odt, ods, pptx, csv, html, xhtml, xml, jrprint
+
+Criar pasta Reports do Jasper dentro de Domains (Domains/Pessoas/Reports), e colocar listar jrxml dentro dessa pasta
+
+--------------------------------------------------------------------------------
+-- Requer Java JDK 1.8
+--------------------------------------------------------------------------------
+->  $ sudo apt-get install default-jdk
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- Instalando pacote
+--------------------------------------------------------------------------------
+->  composer require lavela/phpjasper
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- Criar classe jasperPHP
+--------------------------------------------------------------------------------
+->  $jasper = new JasperPHP();
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- Processar arquivo jrxml
+--------------------------------------------------------------------------------
+->   use JasperPHP\JasperPHP;
+
+    $jasper->process(
+                endereço onde está o arquivo jrxml,
+                endereço de onde arquivos vão ser salvos, deixar "false" caso queira salvar na mesma pasta do arquivo jrxml,
+                array com os formatos de relatorios que vão ser gerados ('pdf', etc),
+                array passando parametros, deixar vazio caso não tenha nenhum(),
+                array de conexão com o banco(
+                    'driver' => 'postgres',
+                    'username' => 'homestead',
+                    'password' => 'secret',
+                    'host' => '127.0.0.1',
+                    'database' => 'sgpweb',
+                    'port' => '5432',
+                )
+            )->execute();
+
+    $jasper->process(
+                app_path() . "/Domains/Pessoas/Reports/Pessoa/Pessoas.jrxml",
+                false,
+                array('pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint'),
+                array(),
+                array(
+                    'driver' => 'postgres',
+                    'username' => 'homestead',
+                    'password' => 'secret',
+                    'host' => '127.0.0.1',
+                    'database' => 'sgpweb',
+                    'port' => '5432',
+                )
+            )->execute();
+--------------------------------------------------------------------------------
+
+https://github.com/geekcom/phpjasper

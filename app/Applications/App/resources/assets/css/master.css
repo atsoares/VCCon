@@ -1,0 +1,71 @@
+/* FORMS */
+label {
+    font-weight: normal;
+}
+
+/* TABLES */
+table thead tr th:last-child {
+    text-align: right;
+}
+
+table tbody tr td:last-child {
+    text-align: right;
+}
+
+/* HEADER */
+.logo-mini, .logo-lg{
+    background:#f9fafc;
+    color:#444444;
+}
+
+.logo-lg {
+    font-size: 15px;
+}
+
+.skin-blue-light .main-header .logo, .skin-blue-light .main-header .logo:hover {
+    background:#f9fafc;
+}
+
+.main-header .sidebar-toggle, .main-header .sidebar-toggle:before {
+    background:#f9fafc;
+    color:#444444;
+}
+
+.skin-blue-light .main-header .navbar .sidebar-toggle:hover, .main-header .sidebar-toggle:focus, .main-header .sidebar-toggle:active {
+    background: #f4f4f5;
+    color:#000;
+}
+.navbar-nav > li.user-menu > a, .nav > li.user-menu > a {
+    padding:5px 10px;
+}
+
+label {
+    font-family: 'Source Sans Pro',sans-serif;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav > .tasks-menu, .navbar-nav > .notifications-menu, .navbar-nav > .messages-menu, .navbar-nav > .user-menu .user-image{
+        display: none;
+    }
+
+    .navbar-nav-notifications {
+        display: none;
+    }
+
+    .navbar-nav-menuarea {
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .main-header .sidebar-toggle {
+        margin-top:-50px;
+    }
+
+    table tbody tr td:last-child {
+        text-align: left;
+    }
+
+    .box-visualizar{
+        margin-bottom:30px;
+    }
+}

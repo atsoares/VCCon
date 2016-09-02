@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperPrint xmlns="http://jasperreports.sourceforge.net/jasperreports/print" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/print http://jasperreports.sourceforge.net/xsd/jasperprint.xsd" name="noDB-i18n" pageWidth="595" pageHeight="842" topMargin="20" leftMargin="20" bottomMargin="20" rightMargin="20" locale="en_US" timezone="Etc/UTC">
+	<property name="net.sf.jasperreports.export.xml.start.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.end.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.page.count" value="1"/>
+	<origin band="background"/>
+	<origin band="title"/>
+	<origin band="pageHeader"/>
+	<origin band="columnHeader"/>
+	<origin band="detail"/>
+	<origin band="columnFooter"/>
+	<origin band="pageFooter"/>
+	<origin band="summary"/>
+	<page>
+		<frame>
+			<reportElement uuid="5347bff5-dbb0-4672-b148-036cdd75c8c7" mode="Opaque" x="0" y="0" width="595" height="92" backcolor="#006699" origin="1" srcId="1" printId="1"/>
+			<text textHeight="39.578125" lineSpacingFactor="1.1640625" leadingOffset="-8.018555">
+				<reportElement uuid="8b0fa6d5-c0c6-4530-95bb-93c3b34d2fca" x="20" y="20" width="234" height="43" forecolor="#FFFFFF" origin="1" srcId="2" printId="1"/>
+				<font size="34" isBold="true"/>
+				<textContent><![CDATA[JasperStart]]></textContent>
+			</text>
+			<text textAlignment="Right" textHeight="16.296875" lineSpacingFactor="1.1640625" leadingOffset="-3.3017578">
+				<reportElement uuid="84c20b7b-2750-44e1-8f6e-87cc755158c2" x="298" y="43" width="277" height="20" forecolor="#FFFFFF" origin="1" srcId="3" printId="1"/>
+				<font size="14" isBold="false"/>
+				<textContent><![CDATA[Report with parameters]]></textContent>
+			</text>
+		</frame>
+		<line>
+			<reportElement uuid="f7dc2f7c-871e-4a62-9130-9cfaaba2b639" x="0" y="125" width="595" height="1" forecolor="#666666" origin="3" srcId="4" printId="1"/>
+		</line>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="e6737d61-6294-4baa-b692-6d65c3881bd6" x="20" y="137" width="146" height="15" origin="4" srcId="5" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[Parameter: myString =]]></textContent>
+		</text>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="1762deaa-f37f-41ee-80b4-b65ce300eb41" x="166" y="137" width="369" height="15" origin="4" srcId="6" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[null]]></textContent>
+		</text>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="415b7c15-6fae-4253-9bc3-a03cd13817b3" x="20" y="152" width="146" height="15" origin="4" srcId="7" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[Parameter: myInt =]]></textContent>
+		</text>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="240b0c09-54f7-40f8-9c9a-3c118f0621d1" x="20" y="167" width="146" height="15" origin="4" srcId="8" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[Parameter: myDate =]]></textContent>
+		</text>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="809b5d74-cc3c-4229-9af7-ba0e6b0e16b0" x="20" y="182" width="146" height="15" origin="4" srcId="9" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[Parameter: myImage =]]></textContent>
+		</text>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="758f320b-112d-412b-87de-be25db76a975" x="166" y="152" width="369" height="15" origin="4" srcId="10" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[null]]></textContent>
+		</text>
+		<text textHeight="13.96875" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="38085873-26de-4bbb-a544-08768ed79691" x="166" y="167" width="369" height="15" origin="4" srcId="11" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<textContent><![CDATA[null]]></textContent>
+		</text>
+		<image scaleImage="RetainShape" hAlign="Left" vAlign="Top" isLazy="true">
+			<reportElement uuid="dcbbf2b6-aa5a-49e6-b0b8-95bf113a9be2" x="171" y="188" width="364" height="382" origin="4" srcId="12" printId="1"/>
+		</image>
+		<text textAlignment="Right" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="3e0da48c-d85f-4011-a737-6a49a9ef86f1" mode="Opaque" x="20" y="809" width="515" height="13" backcolor="#E6E6E6" origin="6" srcId="13" printId="1"/>
+			<textContent><![CDATA[Page 1 of]]></textContent>
+		</text>
+		<text textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="96c0ab5f-b8a9-415b-aade-97320ec772fd" mode="Opaque" x="535" y="809" width="40" height="13" backcolor="#E6E6E6" origin="6" srcId="14" printId="1"/>
+			<textContent><![CDATA[ 1]]></textContent>
+		</text>
+		<text textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.util.Date" pattern="EEEEE dd MMMMM yyyy">
+			<reportElement uuid="4cfc06da-023b-4c24-9b5e-b8e3a65cdc5a" x="20" y="809" width="100" height="13" origin="6" srcId="15" printId="1"/>
+			<textContent><![CDATA[Monday 01 August ]]></textContent>
+		</text>
+	</page>
+</jasperPrint>

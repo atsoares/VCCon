@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-08-09T16:43:11 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pessoas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="672c43b1-5a4e-47c6-bbaf-0b6d50987965">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="sgp"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cGVzc29hcyAsMTUsMTUsZWJlMmY2MzItYWRiMy00YjJiLTlmYzctOTMxNWRjN2Y1NmE4Ow=="/>
+	<property name="net.sf.jasperreports.data.adapter" value="sgp"/>
+	<parameter name="nome_completo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="cpf" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="created_at" class="java.sql.Timestamp"/>
+	<parameter name="updated_at" class="java.sql.Timestamp"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM pessoas]]>
+	</queryString>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="nome_completo" class="java.lang.String"/>
+	<field name="created_at" class="java.sql.Timestamp"/>
+	<field name="updated_at" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="43" uuid="6048cc67-b37d-446f-9c16-4ad3c74e8756">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="12"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Relatório de Pessoas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="240" height="37" uuid="fdbec120-672b-4b93-a131-54cc84e4e973"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[NOME COMPLETO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="100" height="37" uuid="b6201dab-9a1c-443a-855d-6cc2e5243f08"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="100" height="37" uuid="c2e9ee80-48e6-4a9f-a94f-48147edbd3a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CRIADO EM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="100" height="37" uuid="a9b87862-2b94-4e45-88b9-bc199fdab0cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ATUALIZADO EM]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="340" y="0" width="100" height="30" uuid="6cdf1576-cb1a-4ca2-9673-b27c83b80340"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{created_at}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="100" height="30" uuid="67805400-9939-4dfc-9cae-c26430046474"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{updated_at}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="100" height="30" uuid="2ba2953a-af52-4ea1-8137-c9a0af547e99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="240" height="30" uuid="851efceb-2fcc-4f34-8763-0e8d70629291"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_completo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

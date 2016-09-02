@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperPrint xmlns="http://jasperreports.sourceforge.net/jasperreports/print" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/print http://jasperreports.sourceforge.net/xsd/jasperprint.xsd" name="Pessoas" pageWidth="595" pageHeight="842" topMargin="20" leftMargin="20" bottomMargin="20" rightMargin="20" locale="en_US" timezone="Etc/UTC">
+	<property name="net.sf.jasperreports.export.xml.start.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.end.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.page.count" value="1"/>
+	<origin band="background"/>
+	<origin band="title"/>
+	<origin band="columnHeader"/>
+	<origin band="detail"/>
+	<origin band="columnFooter"/>
+	<origin band="pageFooter"/>
+	<origin band="summary"/>
+	<page>
+		<text textAlignment="Center" textHeight="13.96875" markup="styled" lineSpacingFactor="1.1640625" leadingOffset="-2.8300781">
+			<reportElement uuid="6048cc67-b37d-446f-9c16-4ad3c74e8756" x="20" y="20" width="555" height="43" origin="1" srcId="1" printId="1"/>
+			<font fontName="DejaVu Sans" size="12"/>
+			<paragraph lineSpacing="Single"/>
+			<textContent><![CDATA[Relatório de Pessoas]]></textContent>
+		</text>
+		<text textAlignment="Left" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="fdbec120-672b-4b93-a131-54cc84e4e973" x="20" y="63" width="240" height="37" origin="2" srcId="2" printId="1"/>
+			<textContent><![CDATA[NOME COMPLETO]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="b6201dab-9a1c-443a-855d-6cc2e5243f08" x="260" y="63" width="100" height="37" origin="2" srcId="3" printId="1"/>
+			<textContent><![CDATA[CPF]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="c2e9ee80-48e6-4a9f-a94f-48147edbd3a3" x="360" y="63" width="100" height="37" origin="2" srcId="4" printId="1"/>
+			<textContent><![CDATA[CRIADO EM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="a9b87862-2b94-4e45-88b9-bc199fdab0cc" x="460" y="63" width="100" height="37" origin="2" srcId="5" printId="1"/>
+			<textContent><![CDATA[ATUALIZADO EM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.sql.Timestamp" pattern="M/d/yy h:mm a">
+			<reportElement uuid="6cdf1576-cb1a-4ca2-9673-b27c83b80340" x="360" y="100" width="100" height="30" origin="3" srcId="6" printId="1"/>
+			<textContent><![CDATA[7/22/16 11:37 AM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.sql.Timestamp" pattern="M/d/yy h:mm a">
+			<reportElement uuid="67805400-9939-4dfc-9cae-c26430046474" x="460" y="100" width="100" height="30" origin="3" srcId="7" printId="1"/>
+			<textContent><![CDATA[8/9/16 4:07 PM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="2ba2953a-af52-4ea1-8137-c9a0af547e99" x="260" y="100" width="100" height="30" origin="3" srcId="8" printId="1"/>
+			<textContent><![CDATA[05906098313]]></textContent>
+		</text>
+		<text verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="851efceb-2fcc-4f34-8763-0e8d70629291" x="20" y="100" width="240" height="30" origin="3" srcId="9" printId="1"/>
+			<textContent><![CDATA[TESTES]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.sql.Timestamp" pattern="M/d/yy h:mm a">
+			<reportElement uuid="6cdf1576-cb1a-4ca2-9673-b27c83b80340" x="360" y="131" width="100" height="30" origin="3" srcId="6" printId="2"/>
+			<textContent><![CDATA[8/2/16 4:13 PM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.sql.Timestamp" pattern="M/d/yy h:mm a">
+			<reportElement uuid="67805400-9939-4dfc-9cae-c26430046474" x="460" y="131" width="100" height="30" origin="3" srcId="7" printId="2"/>
+			<textContent><![CDATA[8/9/16 4:07 PM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="2ba2953a-af52-4ea1-8137-c9a0af547e99" x="260" y="131" width="100" height="30" origin="3" srcId="8" printId="2"/>
+			<textContent><![CDATA[57632395393]]></textContent>
+		</text>
+		<text verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="851efceb-2fcc-4f34-8763-0e8d70629291" x="20" y="131" width="240" height="30" origin="3" srcId="9" printId="2"/>
+			<textContent><![CDATA[TESTE NUMERO 2]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.sql.Timestamp" pattern="M/d/yy h:mm a">
+			<reportElement uuid="6cdf1576-cb1a-4ca2-9673-b27c83b80340" x="360" y="162" width="100" height="30" origin="3" srcId="6" printId="3"/>
+			<textContent><![CDATA[8/9/16 4:07 PM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984" valueClass="java.sql.Timestamp" pattern="M/d/yy h:mm a">
+			<reportElement uuid="67805400-9939-4dfc-9cae-c26430046474" x="460" y="162" width="100" height="30" origin="3" srcId="7" printId="3"/>
+			<textContent><![CDATA[8/9/16 4:07 PM]]></textContent>
+		</text>
+		<text textAlignment="Center" verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="2ba2953a-af52-4ea1-8137-c9a0af547e99" x="260" y="162" width="100" height="30" origin="3" srcId="8" printId="3"/>
+			<textContent><![CDATA[09590625800]]></textContent>
+		</text>
+		<text verticalAlignment="Middle" textHeight="11.640625" lineSpacingFactor="1.1640625" leadingOffset="-2.3583984">
+			<reportElement uuid="851efceb-2fcc-4f34-8763-0e8d70629291" x="20" y="162" width="240" height="30" origin="3" srcId="9" printId="3"/>
+			<textContent><![CDATA[dfsdfdsfds fds fds fdsffdfd]]></textContent>
+		</text>
+	</page>
+</jasperPrint>
