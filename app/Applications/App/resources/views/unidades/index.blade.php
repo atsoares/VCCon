@@ -5,13 +5,7 @@
 @section('containerTitle', 'Listar Unidades')
 
 @section('buttonsHeader')
-	@parent
-	<li>
-		<a href="{{ route('unidades.create') }}">
-			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
-			Adicionar
-		</a>
-	</li>
+	
 @endsection
 
 @section('content')
@@ -27,7 +21,8 @@
 			@forelse ($unidades as $unidade)
 				<tr>
 					<td>{{ $unidade->numero }}</td>
-					<td>{{ $unidade->ativo }}</td>
+					<td>{{ $unidade->present()->isAtivo() }}</td>
+					<td></td>
 					<td>
 						<a href="{{ route('unidades.show', $unidade->id) }}" class="btn btn-xs btn-info">
 							<i class="fa fa-search fa-fw" aria-hidden="true"></i>
@@ -37,11 +32,6 @@
 						<a href="{{ route('unidades.edit', $unidade->id) }}" class="btn btn-xs btn-primary">
 							<i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>
 							EDITAR
-						</a>
-
-						<a href="{{ route('unidades.destroy', $unidade->id) }}" class="btn btn-xs btn-danger btn-message-deletar">
-							<i class="fa fa-trash-o fa-fw" aria-hidden="true"></i>
-							DELETAR
 						</a>
 					</td>
 				</tr>

@@ -5,6 +5,7 @@ namespace VCCon\Domains;
 use Illuminate\Support\ServiceProvider;
 
 use VCCon\Domains\Unidades\Providers\UnidadeServiceProvider;
+use VCCon\Domains\Condominos\Providers\CondominoServiceProvider;
 
 class DomainsServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,9 @@ class DomainsServiceProvider extends ServiceProvider
     {
         // Unidades Domain
         $this->app->register(UnidadeServiceProvider::class);
+
+        // Condominos Domain
+        $this->app->register(CondominoServiceProvider::class);
 
     }
 }

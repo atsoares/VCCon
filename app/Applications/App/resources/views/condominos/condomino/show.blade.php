@@ -1,18 +1,23 @@
 @extends('app::layouts.main')
 
-@section('title', 'Unidades ')
+@section('title', 'Condominos ')
 
-@section('containerTitle', 'Visualizar Unidade')
+@section('containerTitle', 'Visualizar Condomino')
 
 @section('buttonsHeader')
 	@parent
 	<li>
-		<a href="{{ route('unidades.index') }}">
+		<a href="{{ route('condominos.index') }}">
 			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
 			Listar
 		</a>
 	</li>
-	
+	<li>
+		<a href="{{ route('condominos.create') }}">
+			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+			Adicionar
+		</a>
+	</li>
 @endsection
 
 @section('content')
@@ -21,18 +26,30 @@
 		<h3>Informações</h3>
 		<div class="box-body">
 			<p  class="text-muted">
-				<i class="fa fa-clock-o" aria-hidden="true"></i> Criado em: {{ $unidade->present()->createdAt() }} |
-				Atualizado em: {{ $unidade->present()->updatedAt() }}
+				<i class="fa fa-clock-o" aria-hidden="true"></i> Criado em: {{ $condomino->present()->createdAt() }} |
+				Atualizado em: {{ $condomino->present()->updatedAt() }}
 			</p>
 
-			<b>NÚMERO</b>
-			<p class="text-muted">{{ $unidade->numero }}</p>
+			<b>Nome</b>
+			<p class="text-muted">{{ $condomino->name }}</p>
+			<hr>
+
+			<b>CPF</b>
+			<p class="text-muted">{{ $condomino->cpf }}</p>
+			<hr>
+
+			<b>Email</b>
+			<p class="text-muted">{{ $condomino->email }}</p>
+			<hr>
+
+			<b>Unidade</b>
+			<p class="text-muted">{{ $condomino->unidades->numero }}</p>
 			<hr>
 
 			<b>Ativo</b>
-			<p class="text-muted">{{ $unidade->present()->isAtivo() }}</p>
+			<p class="text-muted">{{ $condomino->present()->isAtivo() }}</p>
 
-			@include('app::partials.boxFooter', ['view' => 'show', 'id' => $unidade->id, 'prefixRoute' => 'unidades'])
+			@include('app::partials.boxFooter', ['view' => 'show', 'id' => $condomino->id, 'prefixRoute' => 'condominos'])
 
 		</div>
 	</div>
@@ -48,7 +65,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $unidade->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $condomino->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -61,7 +78,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $unidade->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $condomino->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -79,7 +96,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $unidade->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $condomino->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Criação</a></h3>
 

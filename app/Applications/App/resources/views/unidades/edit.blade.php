@@ -13,12 +13,7 @@
 			Listar
 		</a>
 	</li>
-	<li>
-		<a href="{{ route('unidades.create') }}">
-			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
-			Adicionar
-		</a>
-	</li>
+	
 @endsection
 
 @section('content')

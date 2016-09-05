@@ -1,13 +1,13 @@
 <?php
 
-namespace VCCon\Domains\Unidades\Models;
+namespace VCCon\Domains\Condominos\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\AuditingTrait;
 use Laracasts\Presenter\PresentableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Unidade extends Model
+class Condomino extends Model
 {
     use AuditingTrait;
     use PresentableTrait;
@@ -18,14 +18,14 @@ class Unidade extends Model
      *
      * @var string
      */
-    protected $table = 'unidades';
+    protected $table = 'condominos';
 
     /**
      * Arquivo para alteração de campos da view
      *
      * @var string
      */
-    protected $presenter = \VCCon\Domains\Unidades\Presenters\UnidadePresenter::class;
+    protected $presenter = \VCCon\Domains\Condominos\Presenters\CondominoPresenter::class;
 
     /**
      * Atributos da tabela que podem ser preenchidos.
@@ -33,7 +33,11 @@ class Unidade extends Model
      * @var array
      */
     protected $fillable = [
-        'numero',
+        'name',
+        'email',
+        'cpf',
+        'telefone',
+        'unidade_id',
         'ativo'
     ];
 
@@ -50,8 +54,8 @@ class Unidade extends Model
      * Get the Condomino for the .
      * @return collection 
      */
-    public function condominos()
+    public function unidades()
     {
-        return $this->hasMany('VCCon\Domains\Condominos\Models\Condomino', 'condominos_id');
+        return $this->belongsTo('VCCon\Domains\Unidades\Models\Unidade', 'unidades_id');
     }
 }
