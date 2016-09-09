@@ -7,7 +7,7 @@ use OwenIt\Auditing\AuditingTrait;
 use Laracasts\Presenter\PresentableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Condomino extends Model
+class CarroCondomino extends Model
 {
     use AuditingTrait;
     use PresentableTrait;
@@ -18,14 +18,14 @@ class Condomino extends Model
      *
      * @var string
      */
-    protected $table = 'condominos';
+    protected $table = 'carros_condominos';
 
     /**
      * Arquivo para alteração de campos da view
      *
      * @var string
      */
-    protected $presenter = \VCCon\Domains\Condominos\Presenters\CondominoPresenter::class;
+    protected $presenter = \VCCon\Domains\Condominos\Presenters\CarroCondominoPresenter::class;
 
     /**
      * Atributos da tabela que podem ser preenchidos.
@@ -33,11 +33,11 @@ class Condomino extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'cpf',
-        'telefone',
-        'unidade_id',
+        'modelo',
+        'marca',
+        'placa',
+        'ano',
+        'condomino_id',
         'ativo'
     ];
 
@@ -54,17 +54,8 @@ class Condomino extends Model
      * Get the Condomino for the .
      * @return collection 
      */
-    public function unidades()
+    public function condominos()
     {
-        return $this->belongsTo('VCCon\Domains\Unidades\Models\Unidade', 'unidade_id');
-    }
-
-    /**
-     * Get the Condomino for the .
-     * @return collection 
-     */
-    public function carrosCondominos()
-    {
-        return $this->hasMany('VCCon\Domains\Condominos\Models\CarroCondomino', 'condomino_id');
+        return $this->belongsTo('VCCon\Domains\Condominos\Models\Condomino', 'condomino_id');
     }
 }

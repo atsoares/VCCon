@@ -27,5 +27,10 @@ class CondominoServiceProvider extends ServiceProvider
             'VCCon\Domains\Condominos\Contracts\CondominoContract',
             'VCCon\Domains\Condominos\Repositories\CondominoRepository'
         );
+
+        $this->app->bind(
+            'VCCon\Domains\Condominos\Contracts\CarroCondominoContract',
+            'VCCon\Domains\Condominos\Repositories\CarroCondominoRepository'
+        );
     }
 }
