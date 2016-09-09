@@ -1,8 +1,8 @@
 <?php
 
-namespace Sgpweb\Applications\App\Http\Requests\Procuradores;
+namespace VCCon\Applications\App\Http\Requests\Procuradores;
 
-use Sgpweb\Core\Http\Requests\Request;
+use VCCon\Core\Http\Requests\Request;
 
 class ProcuradorRequest extends Request
 {

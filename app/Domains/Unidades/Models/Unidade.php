@@ -52,6 +52,6 @@ class Unidade extends Model
      */
     public function condominos()
     {
-        return $this->hasMany('VCCon\Domains\Condominos\Models\Condomino', 'condominos_id');
+        return $this->hasOne('VCCon\Domains\Condominos\Models\Condomino', 'unidade_id');
     }
 }

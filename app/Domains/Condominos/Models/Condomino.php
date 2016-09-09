@@ -56,6 +56,6 @@ class Condomino extends Model
      */
     public function unidades()
     {
-        return $this->belongsTo('VCCon\Domains\Unidades\Models\Unidade', 'unidades_id');
+        return $this->belongsTo('VCCon\Domains\Unidades\Models\Unidade', 'unidade_id');
     }
 }

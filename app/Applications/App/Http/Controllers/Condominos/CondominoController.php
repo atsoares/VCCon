@@ -52,7 +52,7 @@ class CondominoController extends AppBaseController
 
 	public function create()
 	{
-		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'S', 'numero');
+		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'N', 'numero');
 
 		return $this->view('condominos.condomino.create', compact('unidades'));
 	}
@@ -70,7 +70,7 @@ class CondominoController extends AppBaseController
 	{
 		$condomino = $this->CondominoRepository->find($id);
 		
-		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'S', 'numero');
+		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'N', 'numero');
 
 		return $this->view('condominos.condomino.edit', compact('condomino', 'unidades'));
 	}

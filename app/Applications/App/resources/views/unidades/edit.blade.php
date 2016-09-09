@@ -18,7 +18,7 @@
 
 @section('content')
 	{!! Form::model($unidade, array('route' => array('unidades.update', $unidade->id))) !!}
-		@include('app::unidades.unidade.partials.form')
+		@include('app::unidades.partials.form')
 		@include('app::partials.boxFooter', ['view' => 'form', 'routeForm' => 'unidades.index'])
 	{!! Form::close() !!}
 @endsection
