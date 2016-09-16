@@ -61,7 +61,12 @@ class CondominoController extends AppBaseController
 	{
 		$inputs = $request->except('_token');
 
+		$unidade = $request->unidade_id;
+
+
         $this->CondominoRepository->store($inputs);
+
+        $this->UnidadeRepository->update(['ativo' => 'S'], $unidade);
 
         return redirect()->route('condominos.index')->with('success', 'Condomino salvo com sucesso!');
 	}
@@ -79,7 +84,12 @@ class CondominoController extends AppBaseController
 	{
 		$inputs = $request->except('_token');
 
+		$unidade = $request->unidade_id;
+
 		$this->CondominoRepository->update($inputs, $id);
+
+		$this->UnidadeRepository->update(['ativo' => 'S'], $unidade);
+
 
 		return redirect()->route('condominos.index')->with('success', 'Condomino atualizado com sucesso!');
 	}

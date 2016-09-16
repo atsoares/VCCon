@@ -4,6 +4,7 @@ namespace VCCon\Applications\App\Http\Controllers\Unidades;
 
 use VCCon\Applications\App\Http\Controllers\AppBaseController;
 use VCCon\Domains\Unidades\Contracts\UnidadeContract;
+use VCCon\Domains\Condominos\Contracts\CondominoContract;
 use VCCon\Applications\App\Http\Requests\Unidades\UnidadeRequest as Request;
 
 class UnidadeController extends AppBaseController
@@ -13,16 +14,18 @@ class UnidadeController extends AppBaseController
      *
      * @var string
      */
-	private $UnidadeRepository;
+	private $UnidadeRepository;	
+	private $CondominoRepository;
 
 	/**
      * Função para injetar o objeto Unidade.
      *
      * @var string
      */
-	public function __construct(UnidadeContract $UnidadeRepository)
+	public function __construct(UnidadeContract $UnidadeRepository, CondominoContract $CondominoRepository)
 	{
 		$this->UnidadeRepository = $UnidadeRepository;
+		$this->CondominoRepository = $CondominoRepository;
 	}
 
 	/**
@@ -34,7 +37,7 @@ class UnidadeController extends AppBaseController
 	public function index()
 	{
 		$unidades = $this->UnidadeRepository->paginate();
-		
+
 		return $this->view('unidades.index', compact('unidades'));
 	}
 

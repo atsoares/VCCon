@@ -19,10 +19,17 @@
 		</thead>
 		<tbody>
 			@forelse ($unidades as $unidade)
+			
+			
 				<tr>
 					<td>{{ $unidade->numero }}</td>
 					<td>{{ $unidade->present()->isAtivo() }}</td>
-					<td></td>
+					
+					@if ($unidade->condominos['name'] <> null)
+					<td>{{ $unidade->condominos['name']}}</td>
+					@else
+					<td>Não há registros de condômino</td>
+					@endif
 					<td>
 						<a href="{{ route('unidades.show', $unidade->id) }}" class="btn btn-xs btn-info">
 							<i class="fa fa-search fa-fw" aria-hidden="true"></i>

@@ -361,6 +361,7 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
 
     public static $classMap = array (
         'AddFieldToCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_101502_add_field_to_carros_condominos_table.php',
+        'AddFieldToContatosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_112045_add_field_to_contatos_condominos_table.php',
         'AddFieldsToLogTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_22_190217_add_fields_to_log_table.php',
         'CreateCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_184850_create_carros_condominos_table.php',
         'CreateCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_194011_create_condominos_table.php',

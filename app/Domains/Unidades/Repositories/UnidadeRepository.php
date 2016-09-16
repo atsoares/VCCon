@@ -37,7 +37,7 @@ class UnidadeRepository implements UnidadeContract
 
     public function paginate($perPage = 10, $columns = array('*'))
     {
-        return $this->unidade->query()->paginate($perPage, $columns);
+        return $this->unidade->query()->with('condominos')->paginate($perPage, $columns);
     }
 
     public function store(array $data) {

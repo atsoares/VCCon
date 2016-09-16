@@ -1,13 +1,13 @@
 @extends('app::layouts.main')
 
-@section('title', 'Tipo Procuradores ')
+@section('title', 'Contatos ')
 
-@section('containerTitle', 'Adicionar Tipo Procurador')
+@section('containerTitle', 'Adicionar Contato')
 
 @section('buttonsHeader')
 	@parent
 	<li>
-		<a href="{{ route('procuradorTipos.index') }}">
+		<a href="{{ route('contatos.index') }}">
 			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
 			Listar
 		</a>
@@ -15,9 +15,9 @@
 @endsection
 
 @section('content')
-	{!! Form::open(array('route' => 'procuradorTipos.store')) !!}
-		@include('app::pessoas.procuradorTipo.partials.form')
-		@include('app::partials.boxFooter', ['view' => 'form', 'routeForm' => 'procuradorTipos.index'])
+	{!! Form::open(array('route' => 'contatos.store')) !!}
+		@include('app::condominos.contatoCondomino.partials.form')
+		@include('app::partials.boxFooter', ['view' => 'form', 'routeForm' => 'contatos.index'])
 	{!! Form::close() !!}
 @endsection
 

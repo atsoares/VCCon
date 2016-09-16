@@ -25,7 +25,7 @@ class CondominoRequest extends Request
     {
         return [
             'name'          => 'required',
-            'email'         => 'required|email',
+            'email'         => 'required|email|unique:condominos',
             'cpf'           => 'required|numeric|cpf|min:11',
             'telefone'      => 'required|numeric',
             'unidade_id'    => 'required',
@@ -44,6 +44,7 @@ class CondominoRequest extends Request
             'name.required'           => 'Nome é um campo obrigatório!',
             'email.required'          => 'Email é um campo obrigatório!',
             'email.email'             => 'Digite um email válido!',
+            'email.unique'            => 'Email já existe!',
             'cpf.required'            => 'CPF é um campo obrigatório!',
             'cpf.cpf'                 => 'CPF não é válido!',
             'cpf.min'                 => 'CPF possui 11 dígitos!',
