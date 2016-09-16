@@ -22,7 +22,7 @@ class CarroCondominoRepository implements CarroCondominoContract
      */
     public function __construct(CarroCondomino $carroCondomino)
     {
-        $this->carroondomino = $carroCondomino;
+        $this->carroCondomino = $carroCondomino;
     }
 
     /**

@@ -5,7 +5,7 @@ namespace VCCon\Applications\App\Http\Controllers\Condominos;
 use VCCon\Applications\App\Http\Controllers\AppBaseController;
 use VCCon\Domains\Condominos\Contracts\CondominoContract;
 use VCCon\Domains\Condominos\Contracts\CarroCondominoContract;
-use VCCon\Applications\App\Http\Requests\Condominos\CondominoRequest as Request;
+use VCCon\Applications\App\Http\Requests\Condominos\CarroCondominoRequest as Request;
 
 class CarroCondominoController extends AppBaseController
 {
@@ -15,7 +15,7 @@ class CarroCondominoController extends AppBaseController
      * @var string
      */
 	private $CondominoRepository;
-	private $UnidadeRepository;
+	private $CarroCondominoRepository;
 	//private $CarroCondominoRepository;
 	//private $ContatoCondominoRepository;
 
@@ -24,10 +24,10 @@ class CarroCondominoController extends AppBaseController
      *
      * @var string
      */
-	public function __construct(CondominoContract $CondominoRepository, CarroCondominoContract $UnidadeRepository)
+	public function __construct(CondominoContract $CondominoRepository, CarroCondominoContract $CarroCondominoRepository)
 	{
 		$this->CondominoRepository = $CondominoRepository;
-		$this->UnidadeRepository = $UnidadeRepository;
+		$this->CarroCondominoRepository = $CarroCondominoRepository;
 	}
 
 	/**
@@ -38,56 +38,56 @@ class CarroCondominoController extends AppBaseController
      */
 	public function index()
 	{
-		$condominos = $this->CondominoRepository->paginate();
+		$carros = $this->CarroCondominoRepository->paginate();
 		
-		return $this->view('condominos.condomino.index', compact('condominos'));
+		return $this->view('condominos.carroCondomino.index', compact('carros'));
 	}
 
 	public function show($id)
 	{
-		$condomino = $this->CondominoRepository->find($id);
+		$carro = $this->CarroCondominoRepository->find($id);
 
-		return $this->view('condominos.condomino.show', compact('condomino'));
+		return $this->view('condominos.carroCondomino.show', compact('carro'));
 	}
 
 	public function create()
 	{
-		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'N', 'numero');
+		$condomino = $this->CondominoRepository->listsWhere('ativo', 'S', 'name');
 
-		return $this->view('condominos.condomino.create', compact('unidades'));
+		return $this->view('condominos.carroCondomino.create', compact('condomino'));
 	}
 
 	public function store(Request $request)
 	{
 		$inputs = $request->except('_token');
 
-        $this->CondominoRepository->store($inputs);
+        $this->CarroCondominoRepository->store($inputs);
 
-        return redirect()->route('condominos.index')->with('success', 'Condomino salvo com sucesso!');
+        return redirect()->route('carros.index')->with('success', 'Carro do condomino salvo com sucesso!');
 	}
 
 	public function edit($id)
 	{
-		$condomino = $this->CondominoRepository->find($id);
+		$carro = $this->CarroCondominoRepository->find($id);
 		
-		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'N', 'numero');
+		$condomino = $this->CondominoRepository->listsWhere('ativo', 'S', 'name');
 
-		return $this->view('condominos.condomino.edit', compact('condomino', 'unidades'));
+		return $this->view('condominos.carroCondomino.edit', compact('carro', 'condomino'));
 	}
 
 	public function update(Request $request, $id)
 	{
 		$inputs = $request->except('_token');
 
-		$this->CondominoRepository->update($inputs, $id);
+		$this->CarroCondominoRepository->update($inputs, $id);
 
-		return redirect()->route('condominos.index')->with('success', 'Condomino atualizado com sucesso!');
+		return redirect()->route('carros.index')->with('success', 'Carro do condomino atualizado com sucesso!');
 	}
 
 	public function destroy($id)
 	{
-        $this->CondominoRepository->delete($id);
+        $this->CarroCondominoRepository->delete($id);
 
-        return redirect()->route('condominos.index')->with('success', 'Condomino deletado com sucesso!');
+        return redirect()->route('carros.index')->with('success', 'Carro do condomino deletado com sucesso!');
 	}
 }

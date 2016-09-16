@@ -1,19 +1,19 @@
 @extends('app::layouts.main')
 
-@section('title', 'Procuradores ')
+@section('title', 'Carros ')
 
-@section('containerTitle', 'Visualizar Procurador')
+@section('containerTitle', 'Visualizar Carro')
 
 @section('buttonsHeader')
 	@parent
 	<li>
-		<a href="{{ route('procuradores.index') }}">
+		<a href="{{ route('carros.index') }}">
 			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
 			Listar
 		</a>
 	</li>
 	<li>
-		<a href="{{ route('procuradores.create') }}">
+		<a href="{{ route('carros.create') }}">
 			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
 			Adicionar
 		</a>
@@ -26,30 +26,34 @@
 		<h3>Informações</h3>
 		<div class="box-body">
 			<p  class="text-muted">
-				<i class="fa fa-clock-o" aria-hidden="true"></i> Criado em: {{ $procurador->present()->createdAt() }} |
-				Atualizado em: {{ $procurador->present()->updatedAt() }}
+				<i class="fa fa-clock-o" aria-hidden="true"></i> Criado em: {{ $carro->present()->createdAt() }} |
+				Atualizado em: {{ $carro->present()->updatedAt() }}
 			</p>
 
-			<b>Pessoa</b>
-			<p class="text-muted">{{ $procurador->pessoas->nome_completo }}</p>
+			<b>Marca</b>
+			<p class="text-muted">{{ $carro->marca }}</p>
 			<hr>
 
-			<b>Tipo de Procurador</b>
-			<p class="text-muted">{{ $procurador->procuradorTipos->nome }}</p>
+			<b>Modelo</b>
+			<p class="text-muted">{{ $carro->modelo }}</p>
 			<hr>
 
-			<b>Código PE</b>
-			<p class="text-muted">{{ $procurador->codigo_pe }}</p>
+			<b>Placa</b>
+			<p class="text-muted">{{ $carro->placa }}</p>
 			<hr>
 
-			<b>Procurador Substituído</b>
-			<p class="text-muted">{{ $procurador->procurador_substituido }}</p>
+			<b>Ano</b>
+			<p class="text-muted">{{ $carro->ano }}</p>
+			<hr>
+
+			<b>Condômino</b>
+			<p class="text-muted">{{ $carro->condominos->name }}</p>
 			<hr>
 
 			<b>Ativo</b>
-			<p class="text-muted">{{ $procurador->present()->isAtivo() }}</p>
+			<p class="text-muted">{{ $carro->present()->isAtivo() }}</p>
 
-			@include('app::partials.boxFooter', ['view' => 'show', 'id' => $procurador->id, 'prefixRoute' => 'procuradores'])
+			@include('app::partials.boxFooter', ['view' => 'show', 'id' => $carro->id, 'prefixRoute' => 'carros'])
 
 		</div>
 	</div>
@@ -65,7 +69,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $procurador->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $carro->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -78,7 +82,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $procurador->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $carro->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -96,7 +100,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $procurador->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $carro->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Criação</a></h3>
 

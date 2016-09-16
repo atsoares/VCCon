@@ -38,9 +38,15 @@ Route::group(['prefix' => 'condominos'],  function()
 		Route::get('{id}/remover', 		['as' => 'condominos.destroy', 'uses' => 'Condominos\CondominoController@destroy']);
 	});
 
-	Route::group(['prefix' => 'tipo'],  function()
+	Route::group(['prefix' => 'carros'],  function()
 	{
-		Route::get('', 					['as' => 'processoTipo.index',   'uses' => 'ProcessoTipoController@index']);
+		Route::get('', 					['as' => 'carros.index',   'uses' => 'Condominos\CarroCondominoController@index']);
+        Route::get('{id}/visualizar',	['as' => 'carros.show',    'uses' => 'Condominos\CarroCondominoController@show']);
+        Route::get('criar', 			['as' => 'carros.create',  'uses' => 'Condominos\CarroCondominoController@create']);
+        Route::post('salvar', 			['as' => 'carros.store',   'uses' => 'Condominos\CarroCondominoController@store']);
+        Route::get('{id}/editar', 		['as' => 'carros.edit',    'uses' => 'Condominos\CarroCondominoController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'carros.update',  'uses' => 'Condominos\CarroCondominoController@update']);
+		Route::get('{id}/remover', 		['as' => 'carros.destroy', 'uses' => 'Condominos\CarroCondominoController@destroy']);
 	});
 });
 // End rotas domain OrgaosJulgadores

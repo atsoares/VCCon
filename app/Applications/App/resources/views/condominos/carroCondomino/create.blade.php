@@ -1,13 +1,13 @@
 @extends('app::layouts.main')
 
-@section('title', 'Procuradores ')
+@section('title', 'Carros ')
 
-@section('containerTitle', 'Adicionar Procurador')
+@section('containerTitle', 'Adicionar Carro')
 
 @section('buttonsHeader')
 	@parent
 	<li>
-		<a href="{{ route('procuradores.index') }}">
+		<a href="{{ route('carros.index') }}">
 			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
 			Listar
 		</a>
@@ -15,9 +15,9 @@
 @endsection
 
 @section('content')
-	{!! Form::open(array('route' => 'procuradores.store')) !!}
-		@include('app::pessoas.procurador.partials.form')
-		@include('app::partials.boxFooter', ['view' => 'form', 'routeForm' => 'procuradores.index'])
+	{!! Form::open(array('route' => 'carros.store')) !!}
+		@include('app::condominos.carroCondomino.partials.form')
+		@include('app::partials.boxFooter', ['view' => 'form', 'routeForm' => 'carros.index'])
 	{!! Form::close() !!}
 @endsection
 

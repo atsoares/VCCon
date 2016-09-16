@@ -1,13 +1,13 @@
 @extends('app::layouts.main')
 
-@section('title', 'Procuradores ')
+@section('title', 'Carros ')
 
-@section('containerTitle', 'Listar Procuradores')
+@section('containerTitle', 'Listar Carros')
 
 @section('buttonsHeader')
 	@parent
 	<li>
-		<a href="{{ route('procuradores.create') }}">
+		<a href="{{ route('carros.create') }}">
 			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
 			Adicionar
 		</a>
@@ -18,33 +18,36 @@
 	
 	<table class="table table-bordered table-striped table-condensed table-hover dataTable">
 		<thead>
-			<th>CÓDIGO PE</th>
-			<th>PESSOA</th>
-			<th>TIPO</th>
-			<th>PROCURADOR SUBSTITUÍDO</th>
+			<th>MARCA</th>
+			<th>MODELO</th>
+			<th>PLACA</th>
+			<th>ANO</th>
+			<th>CONDÔMINO</th>
 			<th>ATIVO</th>
 			<th>AÇÕES</th>
 		</thead>
 		<tbody>
-			@forelse ($procuradores as $procurador)
+			@forelse ($carros as $carro)
 				<tr>
-					<td>{{ $procurador->codigo_pe }}</td>
-					<td>{{ $procurador->pessoas->nome_completo }}</td>
-					<td>{{ $procurador->procuradorTipos->nome }}</td>
-					<td>{{ $procurador->procurador_substituido }}</td>
-					<td>{{ $procurador->present()->isAtivo() }}</td>
+				
+					<td>{{ $carro->marca }}</td>
+					<td>{{ $carro->modelo }}</td>
+					<td>{{ $carro->placa }}</td>					
+					<td>{{ $carro->ano }}</td>
+					<td>{{ $carro->condominos->name }}</td>
+					<td>{{ $carro->present()->isAtivo() }}</td>
 					<td>
-						<a href="{{ route('procuradores.show', $procurador->id) }}" class="btn btn-xs btn-info">
+						<a href="{{ route('carros.show', $carro->id) }}" class="btn btn-xs btn-info">
 							<i class="fa fa-search fa-fw" aria-hidden="true"></i>
 							VISUALIZAR
 						</a>
 
-						<a href="{{ route('procuradores.edit', $procurador->id) }}" class="btn btn-xs btn-primary">
+						<a href="{{ route('carros.edit', $carro->id) }}" class="btn btn-xs btn-primary">
 							<i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>
 							EDITAR
 						</a>
 
-						<a href="{{ route('procuradores.destroy', $procurador->id) }}" class="btn btn-xs btn-danger btn-message-deletar">
+						<a href="{{ route('carros.destroy', $carro->id) }}" class="btn btn-xs btn-danger btn-message-deletar">
 							<i class="fa fa-trash-o fa-fw" aria-hidden="true"></i>
 							DELETAR
 						</a>
@@ -52,7 +55,7 @@
 				</tr>
 			@empty
 				<tr>
-					<td colspan="6">Não há registros de procuradores!</td>
+					<td colspan="8">Não há registros de carros!</td>
 				</tr>
 			@endforelse
 		</tbody>
@@ -60,15 +63,15 @@
 
 	<div class="row">
 		<div class="col-md-4">
-			<p>Página {!! $procuradores->currentPage() !!} de {!! $procuradores->lastPage() !!}</p>
+			<p>Página {!! $carros->currentPage() !!} de {!! $carros->lastPage() !!}</p>
 		</div>
 
 		<div class="col-md-4 text-center">
-			{{ $procuradores->render() }}
+			{{ $carros->render() }}
 		</div>
 
 		<div class="col-md-4 text-right">
-			<p>Visualizando {!! $procuradores->count() !!} de {!! $procuradores->total() !!}</p>
+			<p>Visualizando {!! $carros->count() !!} de {!! $carros->total() !!}</p>
 		</div>
 	</div>
 
