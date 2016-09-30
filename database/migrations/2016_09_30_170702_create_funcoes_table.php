@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFuncaoFuncionariosTable extends Migration
+class CreateFuncoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateFuncaoFuncionariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('funcoes_funcionarios', function (Blueprint $table) {
+        Schema::create('funcoes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
             $table->increments('id');
@@ -30,6 +30,6 @@ class CreateFuncaoFuncionariosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('funcoes_funcionarios');
+        Schema::drop('funcoes');
     }
 }

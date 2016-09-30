@@ -20,11 +20,7 @@ Route::group(['prefix' => 'unidades'],  function()
 		Route::get('{id}/remover', 		['as' => 'unidades.destroy', 'uses' => 'Unidades\UnidadeController@destroy']);
 	});
 
-
-
-
-
-// Rotas domain Processos
+// Rotas domain Condominos
 Route::group(['prefix' => 'condominos'],  function()
 {
 	Route::group(['prefix' => ''],  function()
@@ -62,7 +58,35 @@ Route::group(['prefix' => 'condominos'],  function()
 		Route::get('{id}/remover', 		['as' => 'contatos.destroy', 'uses' => 'Condominos\ContatoCondominoController@destroy']);
 	});
 });
-// End rotas domain OrgaosJulgadores
+// End rotas domain Condominos
+
+// Rotas domain Funcionarios
+Route::group(['prefix' => 'funcionarios'],  function()
+{
+	Route::group(['prefix' => ''],  function()
+	{
+		Route::get('', 					['as' => 'funcionarios.index',   'uses' => 'Funcionarios\FuncionarioController@index']);
+		//Route::get('{id}/listar', 		['as' => 'funcionarios.list',    'uses' => 'Funcionarios\FuncionarioController@list']);
+        Route::get('{id}/visualizar',	['as' => 'funcionarios.show',    'uses' => 'Funcionarios\FuncionarioController@show']);
+        Route::get('criar', 			['as' => 'funcionarios.create',  'uses' => 'Funcionarios\FuncionarioController@create']);
+        Route::post('salvar', 			['as' => 'funcionarios.store',   'uses' => 'Funcionarios\FuncionarioController@store']);
+        Route::get('{id}/editar', 		['as' => 'funcionarios.edit',    'uses' => 'Funcionarios\FuncionarioController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'funcionarios.update',  'uses' => 'Funcionarios\FuncionarioController@update']);
+		Route::get('{id}/remover', 		['as' => 'funcionarios.destroy', 'uses' => 'Funcionarios\FuncionarioController@destroy']);
+	});
+
+	Route::group(['prefix' => 'funcoes'],  function()
+	{
+		Route::get('', 					['as' => 'funcoes.index',   'uses' => 'Funcionarios\FuncaoController@index']);
+        Route::get('{id}/visualizar',	['as' => 'funcoes.show',    'uses' => 'Funcionarios\FuncaoController@show']);
+        Route::get('criar', 			['as' => 'funcoes.create',  'uses' => 'Funcionarios\FuncaoController@create']);
+        Route::post('salvar', 			['as' => 'funcoes.store',   'uses' => 'Funcionarios\FuncaoController@store']);
+        Route::get('{id}/editar', 		['as' => 'funcoes.edit',    'uses' => 'Funcionarios\FuncaoController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'funcoes.update',  'uses' => 'Funcionarios\FuncaoController@update']);
+		Route::get('{id}/remover', 		['as' => 'funcoes.destroy', 'uses' => 'Funcionarios\FuncaoController@destroy']);
+	});
+});
+// End rotas domain Funcionarios
 
 
 Route::get('/reports', function () {

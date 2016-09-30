@@ -16,8 +16,6 @@ class CondominoController extends AppBaseController
      */
 	private $CondominoRepository;
 	private $UnidadeRepository;
-	//private $CarroCondominoRepository;
-	//private $ContatoCondominoRepository;
 
 	/**
      * Função para injetar o objeto Condomino.

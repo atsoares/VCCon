@@ -1,13 +1,13 @@
 <?php
 
-namespace VCCon\Domains\Condominos\Models;
+namespace VCCon\Domains\Funcionarios\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\AuditingTrait;
 use Laracasts\Presenter\PresentableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Condomino extends Model
+class Funcionario extends Model
 {
     use AuditingTrait;
     use PresentableTrait;
@@ -18,14 +18,14 @@ class Condomino extends Model
      *
      * @var string
      */
-    protected $table = 'condominos';
+    protected $table = 'funcionarios';
 
     /**
      * Arquivo para alteração de campos da view
      *
      * @var string
      */
-    protected $presenter = \VCCon\Domains\Condominos\Presenters\CondominoPresenter::class;
+    protected $presenter = \VCCon\Domains\Funcionarios\Presenters\FuncionarioPresenter::class;
 
     /**
      * Atributos da tabela que podem ser preenchidos.
@@ -33,11 +33,10 @@ class Condomino extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'cpf',
+        'nome',
         'telefone',
-        'unidade_id',
+        'cpf',
+        'funcao_id',
         'ativo'
     ];
 
@@ -54,26 +53,8 @@ class Condomino extends Model
      * Get the Condomino for the .
      * @return collection 
      */
-    public function unidades()
+    public function funcoes()
     {
-        return $this->belongsTo('VCCon\Domains\Unidades\Models\Unidade', 'unidade_id');
-    }
-
-    /**
-     * Get the Condomino for the .
-     * @return collection 
-     */
-    public function carrosCondominos()
-    {
-        return $this->hasMany('VCCon\Domains\Condominos\Models\CarroCondomino', 'condomino_id');
-    }
-
-    /**
-     * Get the Condomino for the .
-     * @return collection 
-     */
-    public function contatosCondominos()
-    {
-        return $this->hasMany('VCCon\Domains\Condominos\Models\ContatoCondomino', 'condomino_id');
+        return $this->hasOne('VCCon\Domains\Funcionarios\Models\Funcao', 'id');
     }
 }
