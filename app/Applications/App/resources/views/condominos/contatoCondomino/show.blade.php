@@ -1,19 +1,19 @@
 @extends('app::layouts.main')
 
-@section('title', 'Tipo Procuradores ')
+@section('title', 'Contatos ')
 
-@section('containerTitle', 'Visualizar Tipo Procurador')
+@section('containerTitle', 'Visualizar Contatos')
 
 @section('buttonsHeader')
 	@parent
 	<li>
-		<a href="{{ route('procuradorTipos.index') }}">
+		<a href="{{ route('contatos.index') }}">
 			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
 			Listar
 		</a>
 	</li>
 	<li>
-		<a href="{{ route('procuradorTipos.create') }}">
+		<a href="{{ route('contatos.create') }}">
 			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
 			Adicionar
 		</a>
@@ -26,18 +26,34 @@
 		<h3>Informações</h3>
 		<div class="box-body">
 			<p  class="text-muted">
-				<i class="fa fa-clock-o" aria-hidden="true"></i> Criado em: {{ $procuradorTipo->present()->createdAt() }} |
-				Atualizado em: {{ $procuradorTipo->present()->updatedAt() }}
+				<i class="fa fa-clock-o" aria-hidden="true"></i> Criado em: {{ $contato->present()->createdAt() }} |
+				Atualizado em: {{ $contato->present()->updatedAt() }}
 			</p>
 
 			<b>Nome</b>
-			<p class="text-muted">{{ $procuradorTipo->nome }}</p>
+			<p class="text-muted">{{ $contato->nome }}</p>
+			<hr>
+
+			<b>Telefone</b>
+			<p class="text-muted">{{ $contato->telefone }}</p>
+			<hr>
+
+			<b>Email</b>
+			<p class="text-muted">{{ $contato->email }}</p>
+			<hr>
+
+			<b>Unidade</b>
+			<p class="text-muted">{{ $contato->condominos->unidade_id }}</p>
+			<hr>
+
+			<b>Condômino</b>
+			<p class="text-muted">{{ $contato->condominos->name }}</p>
 			<hr>
 
 			<b>Ativo</b>
-			<p class="text-muted">{{ $procuradorTipo->present()->isAtivo() }}</p>
+			<p class="text-muted">{{ $contato->present()->isAtivo() }}</p>
 
-			@include('app::partials.boxFooter', ['view' => 'show', 'id' => $procuradorTipo->id, 'prefixRoute' => 'procuradorTipos'])
+			@include('app::partials.boxFooter', ['view' => 'show', 'id' => $contato->id, 'prefixRoute' => 'contatos'])
 
 		</div>
 	</div>
@@ -53,7 +69,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $procuradorTipo->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $contato->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -66,7 +82,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $procuradorTipo->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $contato->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -84,7 +100,7 @@
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $procuradorTipo->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $contato->present()->createdAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Criação</a></h3>
 

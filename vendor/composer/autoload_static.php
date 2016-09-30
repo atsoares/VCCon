@@ -66,6 +66,7 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         'P' => 
         array (
             'Psy\\' => 4,
+            'Psr\\Log\\' => 8,
             'PhpParser\\' => 10,
         ),
         'O' => 
@@ -224,6 +225,10 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -305,10 +310,6 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
     public static $prefixesPsr0 = array (
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
@@ -366,6 +367,8 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         'CreateCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_184850_create_carros_condominos_table.php',
         'CreateCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_194011_create_condominos_table.php',
         'CreateContatosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_184650_create_contatos_condominos_table.php',
+        'CreateFuncaoFuncionariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_113429_create_funcao_funcionarios_table.php',
+        'CreateFuncionariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_113442_create_funcionarios_table.php',
         'CreateLogTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_01_104512_create_log_table.php',
         'CreateUnidadesTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_193933_create_unidades_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',

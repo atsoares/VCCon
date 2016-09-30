@@ -41,12 +41,25 @@ Route::group(['prefix' => 'condominos'],  function()
 	Route::group(['prefix' => 'carros'],  function()
 	{
 		Route::get('', 					['as' => 'carros.index',   'uses' => 'Condominos\CarroCondominoController@index']);
+		Route::get('{id}/listar', 		['as' => 'carros.list',    'uses' => 'Condominos\CarroCondominoController@list']);
         Route::get('{id}/visualizar',	['as' => 'carros.show',    'uses' => 'Condominos\CarroCondominoController@show']);
         Route::get('criar', 			['as' => 'carros.create',  'uses' => 'Condominos\CarroCondominoController@create']);
         Route::post('salvar', 			['as' => 'carros.store',   'uses' => 'Condominos\CarroCondominoController@store']);
         Route::get('{id}/editar', 		['as' => 'carros.edit',    'uses' => 'Condominos\CarroCondominoController@edit']);
 		Route::post('{id}/atualizar', 	['as' => 'carros.update',  'uses' => 'Condominos\CarroCondominoController@update']);
 		Route::get('{id}/remover', 		['as' => 'carros.destroy', 'uses' => 'Condominos\CarroCondominoController@destroy']);
+	});
+
+	Route::group(['prefix' => 'contatos'],  function()
+	{
+		Route::get('', 					['as' => 'contatos.index',   'uses' => 'Condominos\ContatoCondominoController@index']);
+		Route::get('{id}/listar', 		['as' => 'contatos.list',    'uses' => 'Condominos\ContatoCondominoController@list']);
+        Route::get('{id}/visualizar',	['as' => 'contatos.show',    'uses' => 'Condominos\ContatoCondominoController@show']);
+        Route::get('criar', 			['as' => 'contatos.create',  'uses' => 'Condominos\ContatoCondominoController@create']);
+        Route::post('salvar', 			['as' => 'contatos.store',   'uses' => 'Condominos\ContatoCondominoController@store']);
+        Route::get('{id}/editar', 		['as' => 'contatos.edit',    'uses' => 'Condominos\ContatoCondominoController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'contatos.update',  'uses' => 'Condominos\ContatoCondominoController@update']);
+		Route::get('{id}/remover', 		['as' => 'contatos.destroy', 'uses' => 'Condominos\ContatoCondominoController@destroy']);
 	});
 });
 // End rotas domain OrgaosJulgadores

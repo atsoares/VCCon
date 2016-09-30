@@ -4,7 +4,7 @@ namespace VCCon\Applications\App\Http\Requests\Condominos;
 
 use VCCon\Core\Http\Requests\Request;
 
-class CarroCondominoRequest extends Request
+class ContatoCondominoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,7 @@ class CarroCondominoRequest extends Request
     public function rules()
     {
         return [
-            'modelo'        => 'required',
-            'marca'         => 'required',
-            'ano'           => 'required|min:4',
-            'placa'         => 'required|min:7',
+            'nome'          => 'required',
             'condomino_id'  => 'required',
             'ativo'         => 'required'
         ];
@@ -41,12 +38,7 @@ class CarroCondominoRequest extends Request
     public function messages()
     {
         return [
-            'modelo.required'         => 'Modelo é um campo obrigatório!',
-            'marca.required'          => 'Marca é um campo obrigatório!',
-            'ano.required'            => 'Ano é um campo obrigatório!',
-            'ano.min'                 => 'Ano possui 4 dígitos!',
-            'placa.required'          => 'Placa é um campo obrigatório!',
-            'placa.min'               => 'Placa possui 7 dígitos!',
+            'nome.required'           => 'Nome é um campo obrigatório!',
             'condomino_id.required'   => 'Nome do condômino é um campo obrigatório!',
             'ativo.required'          => 'Ativo é um campo obrigatório!'
         ];

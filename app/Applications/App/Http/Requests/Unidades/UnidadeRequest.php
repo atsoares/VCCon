@@ -25,6 +25,7 @@ class UnidadeRequest extends Request
     {
         return [
             'numero'          => 'required',
+            'ocupada'         => 'required',
             'ativo'           => 'required'
         ];
     }
@@ -38,6 +39,7 @@ class UnidadeRequest extends Request
     {
         return [
             'numero.required'          => 'Número é um campo obrigatório!',
+            'ocupada.required'         => 'Ocupado é um campo obrigatório!',
             'ativo.required'           => 'Ativo é um campo obrigatório!'
         ];
     }

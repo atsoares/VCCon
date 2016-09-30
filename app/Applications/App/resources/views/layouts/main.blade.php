@@ -187,56 +187,82 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-share fa-fw"></i>
-                            <span>Adicionar Links</span>
+                            <span>Unidades</span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
                                 <a href="{{ route('unidades.index') }}">
                                     <i class="fa fa-calendar fa-fw"></i>
-                                    Adicionar
+                                    Listar
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('unidades.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
-                                    Adicionar
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-share fa-fw"></i>
-                            <span>Adicionar</span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li>
-                                <a href="{{ route('unidades.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
-                                    Adicionar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('unidades.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
-                                    Adicionar
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-share fa-fw"></i>
-                            <span>Adicionar</span>
-                        </a>
-                        <ul class="treeview-menu">
                             <li>
                                 <a href="{{ route('unidades.create') }}">
                                     <i class="fa fa-calendar fa-fw"></i>
                                     Adicionar
                                 </a>
                             </li>
-                                                    </ul>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share fa-fw"></i>
+                            <span>Condominos</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{{ route('condominos.index') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Listar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('condominos.create') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Adicionar
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share fa-fw"></i>
+                            <span>Carros</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{{ route('carros.index') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Listar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('carros.create') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Adicionar
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-share fa-fw"></i>
+                            <span>Contatos</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{{ route('contatos.index') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Listar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('contatos.create') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Adicionar
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul><!-- /.sidebar-menu -->
             </section>

@@ -57,7 +57,7 @@ class CarroCondominoRepository implements CarroCondominoContract
     }
 
     public function findBy($attribute, $value, $columns = array('*')) {
-        return $this->carroCondomino->query()->where($attribute, '=', $value)->first($columns);
+        return $this->carroCondomino->query()->where($attribute, '=', $value)->get($columns);
     }
 
     public function lists($columns, $key = 'id')

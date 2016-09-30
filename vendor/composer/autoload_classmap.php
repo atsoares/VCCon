@@ -12,6 +12,8 @@ return array(
     'CreateCarrosCondominosTable' => $baseDir . '/database/migrations/2016_08_31_184850_create_carros_condominos_table.php',
     'CreateCondominosTable' => $baseDir . '/database/migrations/2016_08_30_194011_create_condominos_table.php',
     'CreateContatosCondominosTable' => $baseDir . '/database/migrations/2016_08_31_184650_create_contatos_condominos_table.php',
+    'CreateFuncaoFuncionariosTable' => $baseDir . '/database/migrations/2016_09_30_113429_create_funcao_funcionarios_table.php',
+    'CreateFuncionariosTable' => $baseDir . '/database/migrations/2016_09_30_113442_create_funcionarios_table.php',
     'CreateLogTable' => $baseDir . '/database/migrations/2015_08_01_104512_create_log_table.php',
     'CreateUnidadesTable' => $baseDir . '/database/migrations/2016_08_30_193933_create_unidades_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',

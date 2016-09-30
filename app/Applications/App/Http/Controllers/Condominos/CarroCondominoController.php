@@ -40,7 +40,16 @@ class CarroCondominoController extends AppBaseController
 	{
 		$carros = $this->CarroCondominoRepository->paginate();
 		
+
 		return $this->view('condominos.carroCondomino.index', compact('carros'));
+	}
+
+	public function list($id)
+	{
+		$carros = $this->CarroCondominoRepository->findBy('condomino_id', $id);
+		
+		
+		return $this->view('condominos.carroCondomino.list', compact('carros'));
 	}
 
 	public function show($id)

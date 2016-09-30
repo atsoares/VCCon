@@ -2,7 +2,7 @@
 
 @section('title', 'Contatos ')
 
-@section('containerTitle', 'Listar todos os contatos')
+@section('containerTitle', 'Listar contatos')
 
 @section('buttonsHeader')
 	@parent
@@ -18,20 +18,20 @@
 	
 	<table class="table table-bordered table-striped table-condensed table-hover dataTable">
 		<thead>
+			<th>CONDÔMINO</th>
 			<th>NOME</th>
 			<th>TELEFONE</th>
 			<th>UNIDADE</th>
-			<th>CONDÔMINO</th>
 			<th>ATIVO</th>
 			<th>AÇÕES</th>
 		</thead>
 		<tbody>
 			@forelse ($contatos as $contato)
-				<tr>				
+				<tr>
+					<td>{{ $contato->condominos->name }}</td>
 					<td>{{ $contato->nome }}</td>
 					<td>{{ $contato->telefone }}</td>			
 					<td>{{ $contato->condominos->unidade_id }}</td>
-					<td>{{ $contato->condominos->name }}</td>
 					<td>{{ $contato->present()->isAtivo() }}</td>
 					<td>
 						<a href="{{ route('contatos.show', $contato->id) }}" class="btn btn-xs btn-info">
@@ -57,20 +57,6 @@
 			@endforelse
 		</tbody>
 	</table>
-
-	<div class="row">
-		<div class="col-md-4">
-			<p>Página {!! $contatos->currentPage() !!} de {!! $contatos->lastPage() !!}</p>
-		</div>
-
-		<div class="col-md-4 text-center">
-			{{ $contatos->render() }}
-		</div>
-
-		<div class="col-md-4 text-right">
-			<p>Visualizando {!! $contatos->count() !!} de {!! $contatos->total() !!}</p>
-		</div>
-	</div>
 
 @endsection
 

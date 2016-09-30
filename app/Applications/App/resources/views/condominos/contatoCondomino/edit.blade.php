@@ -21,7 +21,7 @@
 @endsection
 
 @section('content')
-	{!! Form::model($contato, array('route' => array('contatos.update', $contato->id))) !!}
+	{!! Form::model($contato , array('route' => array('contatos.update', $contato ->id))) !!}
 		@include('app::condominos.contatoCondomino.partials.form')
 		@include('app::partials.boxFooter', ['view' => 'form', 'routeForm' => 'contatos.index'])
 	{!! Form::close() !!}

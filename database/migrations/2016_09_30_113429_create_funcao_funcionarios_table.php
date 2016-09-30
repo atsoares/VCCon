@@ -1,10 +1,9 @@
-
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUnidadesTable extends Migration
+class CreateFuncaoFuncionariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +12,12 @@ class CreateUnidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('unidades', function (Blueprint $table) {
+        Schema::create('funcoes_funcionarios', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->char('numero',2)->unique();
-            $table->char('ocupada',1);
-            $table->char('ativo',1)->comment('Indica se possui morador na ocupando a unidade.');
+            $table->char('nome')->unique();
+            $table->char('ativo',1);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +30,6 @@ class CreateUnidadesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('unidades');
+        Schema::drop('funcoes_funcionarios');
     }
 }

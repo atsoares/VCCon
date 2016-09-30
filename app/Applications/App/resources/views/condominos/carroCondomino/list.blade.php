@@ -2,7 +2,7 @@
 
 @section('title', 'Carros ')
 
-@section('containerTitle', 'Listar todos os carros')
+@section('containerTitle', 'Listar carros')
 
 @section('buttonsHeader')
 	@parent
@@ -18,22 +18,22 @@
 	
 	<table class="table table-bordered table-striped table-condensed table-hover dataTable">
 		<thead>
+			<th>CONDÔMINO</th>
 			<th>MARCA</th>
 			<th>MODELO</th>
 			<th>PLACA</th>
 			<th>ANO</th>
-			<th>CONDÔMINO</th>
 			<th>ATIVO</th>
 			<th>AÇÕES</th>
 		</thead>
 		<tbody>
 			@forelse ($carros as $carro)
 				<tr>				
+					<td>{{ $carro->condominos->name }}</td>
 					<td>{{ $carro->marca }}</td>
 					<td>{{ $carro->modelo }}</td>
 					<td>{{ $carro->placa }}</td>					
 					<td>{{ $carro->ano }}</td>
-					<td>{{ $carro->condominos->name }}</td>
 					<td>{{ $carro->present()->isAtivo() }}</td>
 					<td>
 						<a href="{{ route('carros.show', $carro->id) }}" class="btn btn-xs btn-info">
@@ -59,20 +59,6 @@
 			@endforelse
 		</tbody>
 	</table>
-
-	<div class="row">
-		<div class="col-md-4">
-			<p>Página {!! $carros->currentPage() !!} de {!! $carros->lastPage() !!}</p>
-		</div>
-
-		<div class="col-md-4 text-center">
-			{{ $carros->render() }}
-		</div>
-
-		<div class="col-md-4 text-right">
-			<p>Visualizando {!! $carros->count() !!} de {!! $carros->total() !!}</p>
-		</div>
-	</div>
 
 @endsection
 

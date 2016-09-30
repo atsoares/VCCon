@@ -52,7 +52,7 @@ class CondominoController extends AppBaseController
 
 	public function create()
 	{
-		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'N', 'numero');
+		$unidades = $this->UnidadeRepository->listsWhere('ocupada', 'N', 'numero');
 
 		return $this->view('condominos.condomino.create', compact('unidades'));
 	}
@@ -63,10 +63,9 @@ class CondominoController extends AppBaseController
 
 		$unidade = $request->unidade_id;
 
-
         $this->CondominoRepository->store($inputs);
 
-        $this->UnidadeRepository->update(['ativo' => 'S'], $unidade);
+        $this->UnidadeRepository->update(['ocupada' => 'S'], $unidade);
 
         return redirect()->route('condominos.index')->with('success', 'Condomino salvo com sucesso!');
 	}
@@ -75,7 +74,7 @@ class CondominoController extends AppBaseController
 	{
 		$condomino = $this->CondominoRepository->find($id);
 		
-		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'N', 'numero');
+		$unidades = $this->UnidadeRepository->listsWhere('ativo', 'S', 'numero');
 
 		return $this->view('condominos.condomino.edit', compact('condomino', 'unidades'));
 	}
@@ -88,8 +87,7 @@ class CondominoController extends AppBaseController
 
 		$this->CondominoRepository->update($inputs, $id);
 
-		$this->UnidadeRepository->update(['ativo' => 'S'], $unidade);
-
+		$this->UnidadeRepository->update(['ocupada' => 'S'], $unidade);
 
 		return redirect()->route('condominos.index')->with('success', 'Condomino atualizado com sucesso!');
 	}

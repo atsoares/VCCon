@@ -25,10 +25,10 @@ class CondominoRequest extends Request
     {
         return [
             'name'          => 'required',
-            'email'         => 'required|email|unique:condominos',
+            'email'         => 'required|email',
+            'unidade_id'    => 'unique:unidades,numero',
             'cpf'           => 'required|numeric|cpf|min:11',
             'telefone'      => 'required|numeric',
-            'unidade_id'    => 'required',
             'ativo'         => 'required'
         ];
     }
@@ -44,14 +44,13 @@ class CondominoRequest extends Request
             'name.required'           => 'Nome é um campo obrigatório!',
             'email.required'          => 'Email é um campo obrigatório!',
             'email.email'             => 'Digite um email válido!',
-            'email.unique'            => 'Email já existe!',
+            'unidade_id'              => 'Unidade já está ocupada',
             'cpf.required'            => 'CPF é um campo obrigatório!',
             'cpf.cpf'                 => 'CPF não é válido!',
             'cpf.min'                 => 'CPF possui 11 dígitos!',
             'cpf.numeric'             => 'CPF é um campo numérico!',
             'telefone.required'       => 'Telefone é um campo obrigatório!',
             'telefone.numeric'        => 'Somente números no campo telefone!',
-            'unidade_id.required'     => 'Número da unidade do condômino é um campo obrigatório!',
             'ativo.required'          => 'Ativo é um campo obrigatório!'
         ];
     }

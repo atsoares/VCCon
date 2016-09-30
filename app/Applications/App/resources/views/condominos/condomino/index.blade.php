@@ -31,12 +31,12 @@
 					<td>{{ $condomino->cpf }}</td>
 					<td>{{ $condomino->unidades->numero }}</td>
 					<td>{{ $condomino->present()->isAtivo() }}</td>
-					<td><a href="{{ route('condominos.show', $condomino->id) }}" class="btn btn-xs btn-link">
+					<td><a href="{{ route('contatos.list', $condomino->id) }}" class="btn btn-xs btn-link">
 							<i class="fa fa-users fa-fw" aria-hidden="true"></i>
 							CONTATOS
 						</a>
 						
-						<a href="{{ route('condominos.show', $condomino->id) }}" class="btn btn-xs btn-link">
+						<a href="{{ route('carros.list', $condomino->id) }}" class="btn btn-xs btn-link">
 							<i class="fa fa-car fa-fw" aria-hidden="true"></i>
 							CARROS
 						</a>
