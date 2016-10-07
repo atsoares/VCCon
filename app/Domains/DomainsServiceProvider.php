@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use VCCon\Domains\Unidades\Providers\UnidadeServiceProvider;
 use VCCon\Domains\Condominos\Providers\CondominoServiceProvider;
 use VCCon\Domains\Funcionarios\Providers\FuncionarioServiceProvider;
+use VCCon\Domains\AreasExternas\Providers\AreaExternaServiceProvider;
 
 class DomainsServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,9 @@ class DomainsServiceProvider extends ServiceProvider
 
         // Funcionarios Domain
         $this->app->register(FuncionarioServiceProvider::class);
+
+        // AreasExternas Domain
+        $this->app->register(AreaExternaServiceProvider::class);
 
     }
 }
