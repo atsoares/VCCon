@@ -33,7 +33,7 @@ class Condomino extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nome',
         'email',
         'cpf',
         'telefone',
@@ -75,5 +75,14 @@ class Condomino extends Model
     public function contatosCondominos()
     {
         return $this->hasMany('VCCon\Domains\Condominos\Models\ContatoCondomino', 'condomino_id');
+    }
+
+    /**
+     * Get the Condomino for the .
+     * @return collection 
+     */
+    public function reservas()
+    {
+        return $this->hasMany('VCCon\Domains\Reservas\Models\Reserva', 'condomino_id');
     }
 }

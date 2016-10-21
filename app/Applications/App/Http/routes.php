@@ -20,6 +20,28 @@ Route::group(['prefix' => 'unidades'],  function()
 		Route::get('{id}/remover', 		['as' => 'unidades.destroy', 'uses' => 'Unidades\UnidadeController@destroy']);
 	});
 
+Route::group(['prefix' => 'areas-externas'],  function()
+	{
+		Route::get('', 					['as' => 'areasExternas.index',   'uses' => 'AreasExternas\AreaExternaController@index']);
+		Route::get('{id}/visualizar',	['as' => 'areasExternas.show',    'uses' => 'AreasExternas\AreaExternaController@show']);
+		Route::get('criar', 			['as' => 'areasExternas.create',  'uses' => 'AreasExternas\AreaExternaController@create']);
+		Route::post('salvar', 			['as' => 'areasExternas.store',   'uses' => 'AreasExternas\AreaExternaController@store']);
+		Route::get('{id}/editar', 		['as' => 'areasExternas.edit',    'uses' => 'AreasExternas\AreaExternaController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'areasExternas.update',  'uses' => 'AreasExternas\AreaExternaController@update']);
+		Route::get('{id}/remover', 		['as' => 'areasExternas.destroy', 'uses' => 'AreasExternas\AreaExternaController@destroy']);
+	});
+
+Route::group(['prefix' => 'reservas'],  function()
+	{
+		Route::get('', 					['as' => 'reservas.index',   'uses' => 'Reservas\ReservaController@index']);
+		Route::get('{id}/visualizar',	['as' => 'reservas.show',    'uses' => 'Reservas\ReservaController@show']);
+		Route::get('criar', 			['as' => 'reservas.create',  'uses' => 'Reservas\ReservaController@create']);
+		Route::post('salvar', 			['as' => 'reservas.store',   'uses' => 'Reservas\ReservaController@store']);
+		Route::get('{id}/editar', 		['as' => 'reservas.edit',    'uses' => 'Reservas\ReservaController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'reservas.update',  'uses' => 'Reservas\ReservaController@update']);
+		Route::get('{id}/remover', 		['as' => 'reservas.destroy', 'uses' => 'Reservas\ReservaController@destroy']);
+	});
+
 // Rotas domain Condominos
 Route::group(['prefix' => 'condominos'],  function()
 {

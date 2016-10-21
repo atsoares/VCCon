@@ -25,8 +25,8 @@
 					<td>{{ $unidade->numero }}</td>
 					<td>{{ $unidade->present()->isAtivo() }}</td>
 					
-					@if ($unidade->condominos['name'] <> null)
-					<td><a href="{{ route('condominos.show', $unidade->condominos['id']) }}">{{ $unidade->condominos['name']}}</a></td>
+					@if ($unidade->condominos['nome'] <> null)
+					<td><a href="{{ route('condominos.show', $unidade->condominos['id']) }}">{{ $unidade->condominos['nome']}}</a></td>
 					@else
 					<td>Não há registros de condômino</td>
 					@endif

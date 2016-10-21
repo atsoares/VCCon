@@ -27,7 +27,7 @@
 		<tbody>
 			@forelse ($condominos as $condomino)
 				<tr>
-					<td>{{ $condomino->name }}</td>
+					<td>{{ $condomino->nome }}</td>
 					<td>{{ $condomino->cpf }}</td>
 					<td>{{ $condomino->unidades->numero }}</td>
 					<td>{{ $condomino->present()->isAtivo() }}</td>

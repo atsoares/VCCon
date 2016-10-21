@@ -1,7 +1,7 @@
 <div class="row">
     <div class="form-group col-md-9">
-        {!! Form::label('name', 'Nome *', array('class' => 'text-red')) !!}
-        {!! Form::text('name', null, array('class'=>'form-control', 'maxlength'=>'60')); !!}
+        {!! Form::label('nome', 'Nome *', array('class' => 'text-red')) !!}
+        {!! Form::text('nome', null, array('class'=>'form-control', 'maxlength'=>'60')); !!}
     </div>
     <div class="form-group col-md-3">
         {!! Form::label('cpf', 'CPF *', array('class' => 'text-red')) !!}

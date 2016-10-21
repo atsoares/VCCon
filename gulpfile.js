@@ -1,5 +1,7 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-css-url-adjuster');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,6 +15,14 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
 
+    mix.urlAdjuster('node_modules/font-awesome/css/font-awesome.css', {
+        prepend: '../'
+    }, 'app/Applications/App/resources/assets/css/modifiedUrlsCss');
+
+    mix.urlAdjuster('node_modules/icheck/skins/polaris/polaris.css', {
+        prepend: '../../images/iCheck/'
+    }, 'app/Applications/App/resources/assets/css/modifiedUrlsCss');
+
     mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
     mix.copy('node_modules/icheck/skins/polaris/polaris.png', 'public/images/iCheck');
     mix.copy('node_modules/icheck/skins/polaris/polaris@2x.png', 'public/images/iCheck');
@@ -22,8 +32,8 @@ elixir(function(mix) {
         '/../../../node_modules/datatables.net-bs/css/dataTables.bootstrap.css',
         '/../../../node_modules/datatables.net-responsive-bs/css/responsive.bootstrap.css',
         '/../../../node_modules/daterangepicker/daterangepicker-bs3.css',
-        '/../../../node_modules/font-awesome/css/font-awesome.css',
-        '/../../../node_modules/icheck/skins/polaris/polaris.css',
+        '/../../../app/Applications/App/resources/assets/css/modifiedUrlsCss/font-awesome.css',
+        '/../../../app/Applications/App/resources/assets/css/modifiedUrlsCss/polaris.css',
         '/../../../node_modules/select2/dist/css/select2.css',
         '/../../../node_modules/sweetalert/dist/sweetalert.css',
         '/../../../node_modules/sweetalert/themes/google/google.css',

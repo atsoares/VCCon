@@ -17,7 +17,7 @@ class CreateCondominosTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->string('name');
+            $table->string('nome');
             $table->string('email')->unique();
             $table->char('cpf', 11)->comment('CPF do condômino.')->unique();
             $table->integer('telefone');

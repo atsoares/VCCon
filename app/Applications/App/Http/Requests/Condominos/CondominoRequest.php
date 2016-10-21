@@ -24,7 +24,7 @@ class CondominoRequest extends Request
     public function rules()
     {
         return [
-            'name'          => 'required',
+            'nome'          => 'required',
             'email'         => 'required|email',
             'unidade_id'    => 'unique:unidades,numero',
             'cpf'           => 'required|numeric|cpf|min:11',
@@ -41,7 +41,7 @@ class CondominoRequest extends Request
     public function messages()
     {
         return [
-            'name.required'           => 'Nome é um campo obrigatório!',
+            'nome.required'           => 'Nome é um campo obrigatório!',
             'email.required'          => 'Email é um campo obrigatório!',
             'email.email'             => 'Digite um email válido!',
             'unidade_id'              => 'Unidade já está ocupada',
