@@ -19,7 +19,8 @@
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "iatstuti/laravel-nullable-fields": "^1.1",
         "lavela/phpjasper": "^1.3",
-        "google/apiclient": "^2.0"
+        "spatie/laravel-google-calendar": "^1.0",
+        "webpatser/laravel-uuid": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

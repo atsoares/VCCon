@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'google-api-calendar@vccon-145612.iam.gserviceaccount.com',
+        googleCalendarApiKey: 'AIzaSyAG8GBa_YbY7CyFw_PO8aCaOj-FMy9xCRw',
       	weekends: true,
 		header: {
 			left: 'prev,next today',
@@ -11,8 +11,7 @@ $(document).ready(function() {
 		eventLimit: true, 
 		locale: 'pt-br',
 		events: {
-            googleCalendarId: '91bjq7tn46vcic7o5ptubqn4ok@group.calendar.google.com',
-            className: 'gcal-event'
+            googleCalendarId: '91bjq7tn46vcic7o5ptubqn4ok@group.calendar.google.com'
         }
     });
 });

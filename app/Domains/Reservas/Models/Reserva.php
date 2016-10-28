@@ -38,7 +38,8 @@ class Reserva extends Model
         'observacao',
         'horario_inicio',
         'horario_fim',
-        'ativo'
+        'ativo',
+        'evento_id'
     ];
 
     /**
@@ -54,18 +55,18 @@ class Reserva extends Model
      * Get the Condomino for the .
      * @return collection 
      */
-    public function areasExternas()
+    public function areaExterna()
     {
-        return $this->hasOne('VCCon\Domains\AreasExternas\Models\AreaExterna', 'id');
+        return $this->belongsTo('VCCon\Domains\AreasExternas\Models\AreaExterna');
     }
 
     /**
      * Get the Condomino for the .
      * @return collection 
      */
-    public function condominos()
+    public function condomino()
     {
-        return $this->hasOne('VCCon\Domains\Condominos\Models\Condomino', 'id');
+        return $this->belongsTo('VCCon\Domains\Condominos\Models\Condomino');
     }
 
 }

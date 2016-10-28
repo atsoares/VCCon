@@ -175,6 +175,7 @@ return [
         Adldap\Laravel\AdldapServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         JasperPHP\JasperPHPServiceProvider::class,
+        Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
 
     ],
 
@@ -230,6 +231,8 @@ return [
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Adldap'    => Adldap\Laravel\Facades\Adldap::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
+        'Uuid' => Webpatser\Uuid\Uuid::class,
 
     ],
 
