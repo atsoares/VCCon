@@ -24,4 +24,5 @@
 @section('scripts')
 	@parent
 	<script src="{{ elixir('js/app.js') }}"></script>
+	
 @endsection

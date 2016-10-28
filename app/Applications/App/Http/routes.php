@@ -33,13 +33,14 @@ Route::group(['prefix' => 'areas-externas'],  function()
 
 Route::group(['prefix' => 'reservas'],  function()
 	{
-		Route::get('', 					['as' => 'reservas.index',   'uses' => 'Reservas\ReservaController@index']);
-		Route::get('{id}/visualizar',	['as' => 'reservas.show',    'uses' => 'Reservas\ReservaController@show']);
-		Route::get('criar', 			['as' => 'reservas.create',  'uses' => 'Reservas\ReservaController@create']);
-		Route::post('salvar', 			['as' => 'reservas.store',   'uses' => 'Reservas\ReservaController@store']);
-		Route::get('{id}/editar', 		['as' => 'reservas.edit',    'uses' => 'Reservas\ReservaController@edit']);
-		Route::post('{id}/atualizar', 	['as' => 'reservas.update',  'uses' => 'Reservas\ReservaController@update']);
-		Route::get('{id}/remover', 		['as' => 'reservas.destroy', 'uses' => 'Reservas\ReservaController@destroy']);
+		Route::get('', 					['as' => 'reservas.index',      'uses' => 'Reservas\ReservaController@index']);
+		Route::get('{id}/visualizar',	['as' => 'reservas.show',       'uses' => 'Reservas\ReservaController@show']);
+		Route::get('calendario',	    ['as' => 'reservas.calendario', 'uses' => 'Reservas\ReservaController@calendario']);
+		Route::get('criar', 			['as' => 'reservas.create',     'uses' => 'Reservas\ReservaController@create']);
+		Route::post('salvar', 			['as' => 'reservas.store',      'uses' => 'Reservas\ReservaController@store']);
+		Route::get('{id}/editar', 		['as' => 'reservas.edit',       'uses' => 'Reservas\ReservaController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'reservas.update',     'uses' => 'Reservas\ReservaController@update']);
+		Route::get('{id}/remover', 		['as' => 'reservas.destroy',    'uses' => 'Reservas\ReservaController@destroy']);
 	});
 
 // Rotas domain Condominos

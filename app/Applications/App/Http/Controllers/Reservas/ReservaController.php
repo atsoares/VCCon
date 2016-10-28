@@ -46,6 +46,11 @@ class ReservaController extends AppBaseController
 		return $this->view('reservas.index', compact('reservas'));
 	}
 
+	public function calendario()
+	{
+		return $this->view('reservas.calendario');
+	}
+
 	public function show($id)
 	{
 		$reserva = $this->reservaRepository->find($id);
@@ -65,8 +70,7 @@ class ReservaController extends AppBaseController
 	public function store(Request $request)
 	{
 		$inputs = $request->except('_token');
-		dd($inputs);
-
+		
         $this->reservaRepository->store($inputs);
 
         return redirect()->route('reservas.index')->with('success', 'Reserva salva com sucesso!');

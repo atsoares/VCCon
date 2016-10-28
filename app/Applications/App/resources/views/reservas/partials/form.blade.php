@@ -13,8 +13,12 @@
     </div>  
 
     <div class="form-group col-md-4">
-        {!! Form::label('horario_inicio', 'Horário *', array('class' => 'text-red')) !!}
-        {!! Form::text('horario_inicio', null, array('class' => 'form-control dataTime')) !!}
+        {!! Form::label('horario_inicio', 'Horário de início *', array('class' => 'text-red')) !!}
+        {!! Form::text('horario_inicio', null, array('class' => 'form-control dateTimePicker')) !!}
+    </div>
+    <div class="form-group col-md-4">
+        {!! Form::label('horario_fim', 'Horário de término*', array('class' => 'text-red')) !!}
+        {!! Form::text('horario_fim', null, array('class' => 'form-control dateTimePicker')) !!}
     </div>
 
 

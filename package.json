@@ -18,6 +18,7 @@
     "font-awesome": "^4.6.3",
     "icheck": "^1.0.2",
     "jquery": "^2.2.4",
+    "jquery-datetimepicker": "^2.5.4",
     "jquery.inputmask": "^3.3.1",
     "moment": "^2.13.0",
     "select2": "^4.0.3",

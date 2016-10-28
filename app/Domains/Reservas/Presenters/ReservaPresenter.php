@@ -18,7 +18,7 @@ class ReservaPresenter extends BasePresenter
 
     public function dataTimeInicio()
     {
-        return Carbon::parse($this->horario_inicio)->format('d/m/Y H:i:s');
+        return Carbon::parse($this->horario_inicio)->format('d/m/Y H:i');
     }
 
     public function isAtivo()
