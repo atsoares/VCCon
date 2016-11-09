@@ -28,8 +28,8 @@
 			@forelse ($reservas as $reserva)
 				<tr>
 					<td>{{ $reserva->present()->dataTimeInicio }}</td>
-					<td>{{ $reserva->condominos->nome }}</td>
-					<td>{{ $reserva->areasExternas->nome }}</td>
+					<td>{{ $reserva->condomino->nome }}</td>
+					<td>{{ $reserva->areaExterna->nome }}</td>
 					<td>{{ $reserva->present()->isAtivo() }}</td>
 					<td>
 
@@ -76,4 +76,6 @@
 @section('scripts')
 	@parent
 	<script src="{{ elixir('js/app.js') }}"></script>
+	
+
 @endsection

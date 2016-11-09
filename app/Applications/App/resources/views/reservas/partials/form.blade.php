@@ -1,4 +1,7 @@
 <div class="row">
+
+    {!! Form::hidden('evento_id', $reserva->evento_id) !!}
+
     <div class="form-group col-md-2">
         {!! Form::label('condomino_id', 'Reserva para *', array('class' => 'text-red')) !!}
         {!! Form::select('condomino_id', $condominos, null, array('class'=>'form-control', 'placeholder' => 'Selecione um condômino')); !!}
@@ -21,11 +24,12 @@
         {!! Form::text('horario_fim', null, array('class' => 'form-control dateTimePicker')) !!}
     </div>
 
-
     <div class="form-group col-md-2">
         {!! Form::label('ativo', 'Ativo *', array('class' => 'text-red')) !!}
         <br/>
         {!! Form::radio('ativo', 'S', array('class' => 'form-control')) !!} Sim
         {!! Form::radio('ativo', 'N', array('class' => 'form-control')) !!} Não
     </div>
+
+
 </div>

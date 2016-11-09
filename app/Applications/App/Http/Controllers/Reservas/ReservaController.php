@@ -6,6 +6,10 @@ use VCCon\Applications\App\Http\Controllers\AppBaseController;
 use VCCon\Domains\Reservas\Contracts\ReservaContract;
 use VCCon\Domains\AreasExternas\Contracts\AreaExternaContract;
 use VCCon\Domains\Condominos\Contracts\CondominoContract;
+use Spatie\GoogleCalendar\Event;
+use Carbon\Carbon;
+use Webpatser\Uuid\Uuid;
+use DateTime;
 use VCCon\Applications\App\Http\Requests\Reservas\ReservaRequest as Request;
 
 class ReservaController extends AppBaseController
@@ -68,9 +72,34 @@ class ReservaController extends AppBaseController
 	}
 
 	public function store(Request $request)
-	{
+	{		
+
+		$evento = new Event;
+
 		$inputs = $request->except('_token');
-		
+
+		$condomino = $this->condominoRepository->find($request->input('condomino_id'));
+
+		$areaExterna = $this->areaExternaRepository->find($request->input('area_externa_id'));
+
+		$startDate = new Carbon($request->input('horario_inicio'));
+		$endDate = new Carbon($request->input('horario_fim'));	
+
+		$uuid = Uuid::generate();
+
+		$eventId = explode("-", $uuid->string);
+
+		$eventId = $eventId[0].$eventId[1].$eventId[2].$eventId[3].$eventId[4];
+
+		$evento->id            = $eventId;
+		$evento->name          = $areaExterna->nome."444444444444444".$condomino->nome;
+		$evento->description   = $request->input('observacao');
+		$evento->startDateTime = $startDate; 
+		$evento->endDateTime   = $endDate; 
+		$evento->save();
+
+		$inputs = array_add($inputs, "evento_id", $eventId);
+
         $this->reservaRepository->store($inputs);
 
         return redirect()->route('reservas.index')->with('success', 'Reserva salva com sucesso!');
@@ -91,6 +120,21 @@ class ReservaController extends AppBaseController
 	{
 		$inputs = $request->except('_token');
 
+		$condomino = $this->condominoRepository->find($request->input('condomino_id'));
+
+		$areaExterna = $this->areaExternaRepository->find($request->input('area_externa_id'));
+
+		$evento = Event::find($request->input('evento_id'));
+
+		$startDate = new Carbon($request->input('horario_inicio'));
+		$endDate = new Carbon($request->input('horario_fim'));	
+
+		$evento->name          = $areaExterna->nome." - ".$condomino->nome;
+		$evento->description   = $request->input('observacao');
+		$evento->startDateTime = $startDate; 
+		$evento->endDateTime   = $endDate; 
+		$evento->save();
+
 		$this->reservaRepository->update($inputs, $id);
 
 		return redirect()->route('reservas.index')->with('success', 'Reserva atualizada com sucesso!');
@@ -100,6 +144,21 @@ class ReservaController extends AppBaseController
 	{
         $this->reservaRepository->delete($id);
 
+		$evento = Event::find($id);
+		$evento->delete();
+
         return redirect()->route('reservas.index')->with('success', 'Reserva deletada com sucesso!');
+	}
+
+	public function change_date_format($date)
+	{
+		$time = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+		return $time->format('Y-m-d H:i:s');
+	}
+	
+	public function change_date_format_fullcalendar($date)
+	{
+		$time = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+		return $time->format('d/m/Y H:i:s');
 	}
 }

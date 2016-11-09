@@ -2,7 +2,7 @@
 
 @section('title', 'Reservas ')
 
-@section('containerTitle', 'Listar Reservas')
+@section('containerTitle', 'Calendário de Reservas')
 
 @section('buttonsHeader')
 	@parent
