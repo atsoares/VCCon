@@ -5,7 +5,13 @@
 @section('containerTitle', 'Listar Áreas Externas')
 
 @section('buttonsHeader')
-	
+	@parent
+	<li>
+		<a href="{{ route('areasExternas.create') }}">
+			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
+			Adicionar
+		</a>
+	</li>
 @endsection
 
 @section('content')
