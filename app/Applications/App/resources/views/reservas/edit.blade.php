@@ -18,6 +18,12 @@
 			Adicionar
 		</a>
 	</li>
+	<li>
+		<a href="{{ route('reservas.calendario') }}">
+			<i class="fa fa-calendar fa-fw" aria-hidden="true"></i>
+			Calendário
+		</a>
+	</li>	
 @endsection
 
 @section('content')

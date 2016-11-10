@@ -1,6 +1,6 @@
 <div class="row">
 
-    {!! Form::hidden('evento_id', $reserva->evento_id) !!}
+    {{ Form::hidden('event_id', null) }}
 
     <div class="form-group col-md-2">
         {!! Form::label('condomino_id', 'Reserva para *', array('class' => 'text-red')) !!}

@@ -12,6 +12,13 @@
 			Adicionar
 		</a>
 	</li>
+	<li>
+		<a href="{{ route('reservas.calendario') }}">
+			<i class="fa fa-calendar fa-fw" aria-hidden="true"></i>
+			Calendário
+		</a>
+	</li>
+
 @endsection
 
 @section('content')
@@ -19,6 +26,7 @@
 	<table class="table table-bordered table-striped table-condensed table-hover dataTable">
 		<thead>
 			<th>DATA</th>
+			<th>HORÁRIO</th>
 			<th>CONDÔMINO</th>
 			<th>ÁREA RESERVADA</th>
 			<th>ATIVO</th>
@@ -27,7 +35,8 @@
 		<tbody>
 			@forelse ($reservas as $reserva)
 				<tr>
-					<td>{{ $reserva->present()->dataTimeInicio }}</td>
+					<td>{{ $reserva->present()->dataInicio }}</td>
+					<td>{{ $reserva->present()->horaInicio }} - {{ $reserva->present()->horaFim }}</td>
 					<td>{{ $reserva->condomino->nome }}</td>
 					<td>{{ $reserva->areaExterna->nome }}</td>
 					<td>{{ $reserva->present()->isAtivo() }}</td>

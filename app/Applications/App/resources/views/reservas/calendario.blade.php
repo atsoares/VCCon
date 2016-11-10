@@ -7,6 +7,12 @@
 @section('buttonsHeader')
 	@parent
 	<li>
+		<a href="{{ route('reservas.index') }}">
+			<i class="fa fa-list fa-fw" aria-hidden="true"></i>
+			Listar
+		</a>
+	</li>
+	<li>
 		<a href="{{ route('reservas.create') }}">
 			<i class="fa fa-plus fa-fw" aria-hidden="true"></i>
 			Adicionar

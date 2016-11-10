@@ -19,7 +19,7 @@ class CreateReservarAreasTable extends Migration
             $table->unsignedInteger('condomino_id');
             $table->unsignedInteger('area_externa_id');
             $table->string('observacao')->nullable();
-            $table->string('evento_id');
+            $table->string('event_id');
             $table->timestamp('horario_inicio');
             $table->timestamp('horario_fim');
             $table->char('ativo', 1);

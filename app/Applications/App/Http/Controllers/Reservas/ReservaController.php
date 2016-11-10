@@ -10,6 +10,7 @@ use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
 use Webpatser\Uuid\Uuid;
 use DateTime;
+use Illuminate\Support\Arr;
 use VCCon\Applications\App\Http\Requests\Reservas\ReservaRequest as Request;
 
 class ReservaController extends AppBaseController
@@ -74,10 +75,8 @@ class ReservaController extends AppBaseController
 	public function store(Request $request)
 	{		
 
-		$evento = new Event;
-
 		$inputs = $request->except('_token');
-
+		
 		$condomino = $this->condominoRepository->find($request->input('condomino_id'));
 
 		$areaExterna = $this->areaExternaRepository->find($request->input('area_externa_id'));
@@ -87,18 +86,21 @@ class ReservaController extends AppBaseController
 
 		$uuid = Uuid::generate();
 
-		$eventId = explode("-", $uuid->string);
+		$eventoId = explode("-", $uuid->string);
 
-		$eventId = $eventId[0].$eventId[1].$eventId[2].$eventId[3].$eventId[4];
+		$eventoId = $eventoId[0].$eventoId[1].$eventoId[2].$eventoId[3].$eventoId[4];
 
-		$evento->id            = $eventId;
-		$evento->name          = $areaExterna->nome."444444444444444".$condomino->nome;
+		$inputs['event_id'] = $eventoId;
+
+		$evento = new Event;
+
+		$evento->id            = $eventoId;
+		$evento->name          = $areaExterna->nome." - ".$condomino->nome;
 		$evento->description   = $request->input('observacao');
 		$evento->startDateTime = $startDate; 
 		$evento->endDateTime   = $endDate; 
-		$evento->save();
-
-		$inputs = array_add($inputs, "evento_id", $eventId);
+		$evento->saveNew();
+		
 
         $this->reservaRepository->store($inputs);
 
@@ -124,16 +126,18 @@ class ReservaController extends AppBaseController
 
 		$areaExterna = $this->areaExternaRepository->find($request->input('area_externa_id'));
 
-		$evento = Event::find($request->input('evento_id'));
-
 		$startDate = new Carbon($request->input('horario_inicio'));
 		$endDate = new Carbon($request->input('horario_fim'));	
+
+		$eventoId = $request->input('event_id');
+
+		$evento = Event::find($eventoId);
 
 		$evento->name          = $areaExterna->nome." - ".$condomino->nome;
 		$evento->description   = $request->input('observacao');
 		$evento->startDateTime = $startDate; 
 		$evento->endDateTime   = $endDate; 
-		$evento->save();
+		$evento->saveOld();
 
 		$this->reservaRepository->update($inputs, $id);
 
@@ -141,11 +145,16 @@ class ReservaController extends AppBaseController
 	}
 
 	public function destroy($id)
-	{
-        $this->reservaRepository->delete($id);
+	{	
 
-		$evento = Event::find($id);
+		$reserva = $this->reservaRepository->find($id);
+
+		$eventoId = $reserva->event_id;  
+
+		$evento = Event::find($eventoId);
 		$evento->delete();
+
+		$this->reservaRepository->delete($id);
 
         return redirect()->route('reservas.index')->with('success', 'Reserva deletada com sucesso!');
 	}

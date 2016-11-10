@@ -36,10 +36,10 @@ class Reserva extends Model
         'condomino_id',
         'area_externa_id',
         'observacao',
+        'event_id',
         'horario_inicio',
         'horario_fim',
         'ativo',
-        'evento_id'
     ];
 
     /**
