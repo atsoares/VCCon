@@ -111,6 +111,10 @@ Route::group(['prefix' => 'funcionarios'],  function()
 });
 // End rotas domain Funcionarios
 
+Route::get('/', function () {
+    return view('reservas.index');
+});
+
 
 Route::get('/reports', function () {
 

@@ -186,19 +186,19 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-share fa-fw"></i>
+                            <i class="fa fa-home fa-fw"></i>
                             <span>Unidades</span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
                                 <a href="{{ route('unidades.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                    <i class="fa fa-list fa-fw"></i>
                                     Listar
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('unidades.create') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                    <i class="fa fa-plus fa-fw"></i>
                                     Adicionar
                                 </a>
                             </li>
@@ -206,39 +206,52 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-share fa-fw"></i>
+                            <i class="fa fa-user fa-fw"></i>
                             <span>Condominos</span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
                                 <a href="{{ route('condominos.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                    <i class="fa fa-list fa-fw"></i>
                                     Listar
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('condominos.create') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                    <i class="fa fa-user-plus fa-fw"></i>
                                     Adicionar
                                 </a>
                             </li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-share fa-fw"></i>
-                            <span>Carros</span>
-                        </a>
-                        <ul class="treeview-menu">
                             <li>
                                 <a href="{{ route('carros.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                    <i class="fa fa-car fa-fw"></i>
+                                    Carros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('contatos.index') }}">
+                                    <i class="fa fa-users fa-fw"></i>
+                                    Contatos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-id-card fa-fw"></i>
+                            <span>Funcionários</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="{{ route('funcionarios.index') }}">
+                                    <i class="fa fa-list fa-fw"></i>
                                     Listar
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('carros.create') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                <a href="{{ route('funcionarios.create') }}">
+                                    <i class="fa fa-plus fa-fw"></i>
                                     Adicionar
                                 </a>
                             </li>
@@ -246,20 +259,32 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-share fa-fw"></i>
-                            <span>Contatos</span>
+                            <i class="fa fa-calendar-check-o fa-fw"></i>
+                            <span>Reservas</span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="{{ route('contatos.index') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                <a href="{{ route('areasExternas.index') }}">
+                                    <i class="fa fa-tree fa-fw"></i>
+                                    Áreas Externas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('reservas.index') }}">
+                                    <i class="fa fa-list fa-fw"></i>
                                     Listar
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('contatos.create') }}">
-                                    <i class="fa fa-calendar fa-fw"></i>
+                                <a href="{{ route('reservas.create') }}">
+                                    <i class="fa fa-calendar-plus-o fa-fw"></i>
                                     Adicionar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('reservas.calendario') }}">
+                                    <i class="fa fa-calendar fa-fw"></i>
+                                    Ver Calendário
                                 </a>
                             </li>
                         </ul>
