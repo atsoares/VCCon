@@ -93,14 +93,12 @@ class ReservaController extends AppBaseController
 		$inputs['event_id'] = $eventoId;
 
 		$evento = new Event;
-
 		$evento->id            = $eventoId;
 		$evento->name          = $areaExterna->nome." - ".$condomino->nome;
 		$evento->description   = $request->input('observacao');
 		$evento->startDateTime = $startDate; 
 		$evento->endDateTime   = $endDate; 
 		$evento->saveNew();
-		
 
         $this->reservaRepository->store($inputs);
 

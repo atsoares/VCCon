@@ -43,6 +43,18 @@ Route::group(['prefix' => 'reservas'],  function()
 		Route::get('{id}/remover', 		['as' => 'reservas.destroy',    'uses' => 'Reservas\ReservaController@destroy']);
 	});
 
+Route::group(['prefix' => 'reunioes'],  function()
+	{
+		Route::get('', 					['as' => 'reunioes.index',      'uses' => 'Reunioes\ReuniaoController@index']);
+		Route::get('{id}/visualizar',	['as' => 'reunioes.show',       'uses' => 'Reunioes\ReuniaoController@show']);
+		Route::get('/calendario',	    ['as' => 'reunioes.calendario', 'uses' => 'Reunioes\ReuniaoController@calendario']);
+		Route::get('criar', 			['as' => 'reunioes.create',     'uses' => 'Reunioes\ReuniaoController@create']);
+		Route::post('salvar', 			['as' => 'reunioes.store',      'uses' => 'Reunioes\ReuniaoController@store']);
+		Route::get('{id}/editar', 		['as' => 'reunioes.edit',       'uses' => 'Reunioes\ReuniaoController@edit']);
+		Route::post('{id}/atualizar', 	['as' => 'reunioes.update',     'uses' => 'Reunioes\ReuniaoController@update']);
+		Route::get('{id}/remover', 		['as' => 'reunioes.destroy',    'uses' => 'Reunioes\ReuniaoController@destroy']);
+	});
+
 // Rotas domain Condominos
 Route::group(['prefix' => 'condominos'],  function()
 {
@@ -110,19 +122,3 @@ Route::group(['prefix' => 'funcionarios'],  function()
 	});
 });
 // End rotas domain Funcionarios
-
-Route::get('/', function () {
-    return view('reservas.index');
-});
-
-
-Route::get('/reports', function () {
-
-    $input =  public_path() . '/report/hello_world_params.jrxml';
-    $input2 =  public_path() . '/report/hello_world_params.jasper';
-    $jasper = new JasperPHP;
-    $jasper->compile($input)->execute();
-    $output = $jasper->list_parameters($input2)->execute();
-
-    print_r($output);
-});
