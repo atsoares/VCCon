@@ -45,7 +45,7 @@
 			<hr>
 
 			<b>Tema</b>
-			<p class="text-muted">{{ $reuniao->present()->horaFim  }}</p>
+			<p class="text-muted">{{ $reuniao->tema }}</p>
 			<hr>
 
 			<b>Pauta</b>
