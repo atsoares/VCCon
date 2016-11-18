@@ -404,6 +404,7 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         'AddFieldToCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_101502_add_field_to_carros_condominos_table.php',
         'AddFieldToContatosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_112045_add_field_to_contatos_condominos_table.php',
         'AddFieldsToLogTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_22_190217_add_fields_to_log_table.php',
+<<<<<<< HEAD
         'Adldap\\Adldap' => __DIR__ . '/..' . '/adldap2/adldap2/src/Adldap.php',
         'Adldap\\Auth\\Guard' => __DIR__ . '/..' . '/adldap2/adldap2/src/Auth/Guard.php',
         'Adldap\\Connections\\Configuration' => __DIR__ . '/..' . '/adldap2/adldap2/src/Connections/Configuration.php',
@@ -531,7 +532,12 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 5e7e9176cda53e2ccf6bfdfb7cd6eb03095385f1
         'CreateAgendarReunioesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_16_093709_create_agendar_reunioes_table.php',
+>>>>>>> 5a84292bb12c17c15a40ea8ab5c5a1be05fa53ab
         'CreateAreasExternasTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_153240_create_areas_externas_table.php',
         'CreateCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_184850_create_carros_condominos_table.php',
         'CreateCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_194011_create_condominos_table.php',
@@ -540,6 +546,7 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         'CreateFuncoesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_170702_create_funcoes_table.php',
         'CreateLogTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_01_104512_create_log_table.php',
         'CreateReservarAreasTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_153403_create_reservar_areas_table.php',
+        'CreateReunioesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_11_210723_create_reunioes_table.php',
         'CreateUnidadesTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_193933_create_unidades_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
