@@ -377,6 +377,10 @@ class ComposerStaticInit9ad8583048543a0f4c860f78177abea0
         'AddFieldToCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_101502_add_field_to_carros_condominos_table.php',
         'AddFieldToContatosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_112045_add_field_to_contatos_condominos_table.php',
         'AddFieldsToLogTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_22_190217_add_fields_to_log_table.php',
+<<<<<<< HEAD
+=======
+        'CreateAgendarReunioesTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_16_093709_create_agendar_reunioes_table.php',
+>>>>>>> 5a84292bb12c17c15a40ea8ab5c5a1be05fa53ab
         'CreateAreasExternasTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_153240_create_areas_externas_table.php',
         'CreateCarrosCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_184850_create_carros_condominos_table.php',
         'CreateCondominosTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_194011_create_condominos_table.php',

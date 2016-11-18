@@ -260,7 +260,7 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-calendar-check-o fa-fw"></i>
-                            <span>Reservas</span>
+                            <span>Eventos</span>
                         </a>
                         <ul class="treeview-menu">
                             <li>
@@ -271,14 +271,14 @@
                             </li>
                             <li>
                                 <a href="{{ route('reservas.index') }}">
-                                    <i class="fa fa-list fa-fw"></i>
-                                    Listar
+                                    <i class="fa fa-book fa-fw"></i>
+                                    Reservar área
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('reservas.create') }}">
-                                    <i class="fa fa-calendar-plus-o fa-fw"></i>
-                                    Adicionar
+                                <a href="{{ route('reunioes.index') }}">
+                                    <i class="fa fa-list fa-fw"></i>
+                                    Agendar reunião
                                 </a>
                             </li>
                             <li>

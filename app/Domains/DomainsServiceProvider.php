@@ -9,6 +9,7 @@ use VCCon\Domains\Condominos\Providers\CondominoServiceProvider;
 use VCCon\Domains\Funcionarios\Providers\FuncionarioServiceProvider;
 use VCCon\Domains\AreasExternas\Providers\AreaExternaServiceProvider;
 use VCCon\Domains\Reservas\Providers\ReservaServiceProvider;
+use VCCon\Domains\Reunioes\Providers\ReuniaoServiceProvider;
 
 class DomainsServiceProvider extends ServiceProvider
 {
@@ -40,6 +41,9 @@ class DomainsServiceProvider extends ServiceProvider
 
         // Reservas Domain
         $this->app->register(ReservaServiceProvider::class);
+
+        // Reuniao Domain
+        $this->app->register(ReuniaoServiceProvider::class);
 
     }
 }

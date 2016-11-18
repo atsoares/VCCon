@@ -43,7 +43,7 @@ class ReservaRequest extends Request
             'condomino_id.required'   => 'Condômino é um campo obrigatório!',
             'area_externa_id.required'   => 'Área externa é um campo obrigatório!',
             'observacao.required'     => 'Observação é um campo obrigatório!',
-            'horario_inicio.required' => 'Horário de inicip é um campo obrigatório!',
+            'horario_inicio.required' => 'Horário de inicio é um campo obrigatório!',
             'ativo.required'          => 'Ativo é um campo obrigatório!'
         ];
     }

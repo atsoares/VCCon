@@ -9,6 +9,10 @@ return array(
     'AddFieldToCarrosCondominosTable' => $baseDir . '/database/migrations/2016_09_16_101502_add_field_to_carros_condominos_table.php',
     'AddFieldToContatosCondominosTable' => $baseDir . '/database/migrations/2016_09_16_112045_add_field_to_contatos_condominos_table.php',
     'AddFieldsToLogTable' => $baseDir . '/database/migrations/2016_05_22_190217_add_fields_to_log_table.php',
+<<<<<<< HEAD
+=======
+    'CreateAgendarReunioesTable' => $baseDir . '/database/migrations/2016_11_16_093709_create_agendar_reunioes_table.php',
+>>>>>>> 5a84292bb12c17c15a40ea8ab5c5a1be05fa53ab
     'CreateAreasExternasTable' => $baseDir . '/database/migrations/2016_10_05_153240_create_areas_externas_table.php',
     'CreateCarrosCondominosTable' => $baseDir . '/database/migrations/2016_08_31_184850_create_carros_condominos_table.php',
     'CreateCondominosTable' => $baseDir . '/database/migrations/2016_08_30_194011_create_condominos_table.php',
