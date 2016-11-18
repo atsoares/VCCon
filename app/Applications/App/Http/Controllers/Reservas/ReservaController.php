@@ -10,6 +10,7 @@ use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
 use Webpatser\Uuid\Uuid;
 use DateTime;
+use Mail;
 use Illuminate\Support\Arr;
 use VCCon\Applications\App\Http\Requests\Reservas\ReservaRequest as Request;
 
@@ -84,6 +85,20 @@ class ReservaController extends AppBaseController
 		$startDate = new Carbon($request->input('horario_inicio'));
 		$endDate = new Carbon($request->input('horario_fim'));	
 
+		 $condominos = $this->condominoRepository->all();
+		
+		$texto = 'Reservado área externa '.$areaExterna->nome.' para o condômino '.$condomino->nome.' no dia '.$this->dataInicio($request->input('horario_inicio')).' às '.$this->horaInicio($request->input('horario_inicio'));
+
+        foreach ($condominos as $cond) {
+        	Mail::send('app::reservas.emailReserva', ['texto' => $texto], function($message) use ($cond) {
+
+	        	$message->to($cond->email);
+
+	       		$message->subject('Reserva de área externa');
+
+    		});
+        }
+
 		$uuid = Uuid::generate();
 
 		$eventoId = explode("-", $uuid->string);
@@ -101,6 +116,8 @@ class ReservaController extends AppBaseController
 		$evento->saveNew();
 
         $this->reservaRepository->store($inputs);
+
+
 
         return redirect()->route('reservas.index')->with('success', 'Reserva salva com sucesso!');
 	}
@@ -157,6 +174,18 @@ class ReservaController extends AppBaseController
         return redirect()->route('reservas.index')->with('success', 'Reserva deletada com sucesso!');
 	}
 
+	public function dataInicio($date)
+	{
+		$time = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+		return $time->format('d/m/Y');
+	}
+
+	public function horaInicio($date)
+	{
+		$time = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+		return $time->format('H:i');
+	}
+
 	public function change_date_format($date)
 	{
 		$time = Carbon::createFromFormat('Y-m-d H:i:s', $date);
@@ -168,4 +197,15 @@ class ReservaController extends AppBaseController
 		$time = Carbon::createFromFormat('Y-m-d H:i:s', $date);
 		return $time->format('d/m/Y H:i:s');
 	}
+
+	public function sendEmail()
+    {
+        $user = User::findOrFail($id);
+
+        Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+            $m->from('hello@app.com', 'Your Application');
+
+            $m->to($user->email, $user->name)->subject('Your Reminder!');
+        });
+    }
 }
