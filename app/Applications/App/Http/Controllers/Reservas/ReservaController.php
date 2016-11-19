@@ -85,7 +85,8 @@ class ReservaController extends AppBaseController
 		$startDate = new Carbon($request->input('horario_inicio'));
 		$endDate = new Carbon($request->input('horario_fim'));	
 
-		 $condominos = $this->condominoRepository->all();
+		/* EMAIL EMAIL EMAIL
+		$condominos = $this->condominoRepository->all();
 		
 		$texto = 'Reservado área externa '.$areaExterna->nome.' para o condômino '.$condomino->nome.' no dia '.$this->dataInicio($request->input('horario_inicio')).' às '.$this->horaInicio($request->input('horario_inicio'));
 
@@ -98,6 +99,7 @@ class ReservaController extends AppBaseController
 
     		});
         }
+        */
 
 		$uuid = Uuid::generate();
 

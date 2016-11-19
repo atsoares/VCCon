@@ -9,6 +9,11 @@ use JasperPHP\JasperPHP;
 * @var null
 */
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
 Route::group(['prefix' => 'unidades'],  function()
 	{
 		Route::get('', 					['as' => 'unidades.index',   'uses' => 'Unidades\UnidadeController@index']);
