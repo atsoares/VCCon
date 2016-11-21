@@ -176,6 +176,7 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         JasperPHP\JasperPHPServiceProvider::class,
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
+        Skovmand\Mailchimp\MailchimpServiceProvider::class,
 
     ],
 

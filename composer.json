@@ -22,7 +22,8 @@
         "spatie/laravel-google-calendar": "^1.0",
         "webpatser/laravel-uuid": "2.*",
         "mandrill/mandrill": "1.0.*",
-        "guzzlehttp/guzzle": "*"
+        "guzzlehttp/guzzle": "*",
+        "skovmand/mailchimp-laravel": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
