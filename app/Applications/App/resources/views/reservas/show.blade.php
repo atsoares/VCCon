@@ -72,27 +72,14 @@
 		<ul class="timeline">
 			<li class="time-label">
 				<span class="bg-green">
-					10 Feb. 2014
+					{{ $reserva->present()->updatedAt() }}
 				</span>
 			</li>
 			<li>
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $reserva->present()->createdAt() }}</span>
-
-					<h3 class="timeline-header"><a href="#">Edição</a></h3>
-
-					<div class="timeline-body">
-						Descrição
-					</div>
-				</div>
-			</li>
-			<li>
-				<!-- timeline icon -->
-				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
-				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $reserva->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $reserva->present()->updatedAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -103,7 +90,7 @@
 			</li>
 			<li class="time-label">
 				<span class="bg-green">
-					10 Feb. 2014
+					{{ $reserva->present()->createdAt() }}
 				</span>
 			</li>
 			<li>

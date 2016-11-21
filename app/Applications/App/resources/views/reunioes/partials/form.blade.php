@@ -9,7 +9,7 @@
 
     <div class="form-group col-md-8">
         {!! Form::label('observacao', 'Pauta *', array('class' => 'text-red')) !!}
-        {!! Form::text('observacao', null, array('class'=>'form-control')); !!}
+        {!! Form::textarea('observacao', null, array('class'=>'form-control')); !!}
     </div>  
 
     <div class="form-group col-md-8">

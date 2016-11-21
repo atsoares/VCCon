@@ -24,14 +24,19 @@ class ReservaController extends AppBaseController
 	private $reservaRepository;	
 	private $condominoRepository;
 	private $areaExternaRepository;
+	public $mailchimp;
+    public $listId = '0e5ec5601as';
+
 
 	/**
      * Função para injetar o objeto Reserva.
      *
      * @var string
      */
-	public function __construct(ReservaContract $reservaRepository, CondominoContract $condominoRepository, AreaExternaContract $areaExternaRepository)
+	public function __construct(\Mailchimp $mailchimp, ReservaContract $reservaRepository, CondominoContract $condominoRepository, AreaExternaContract $areaExternaRepository)
 	{
+		$this->mailchimp = $mailchimp;
+
 		$this->reservaRepository = $reservaRepository;
 
 		$this->condominoRepository = $condominoRepository;
@@ -85,21 +90,32 @@ class ReservaController extends AppBaseController
 		$startDate = new Carbon($request->input('horario_inicio'));
 		$endDate = new Carbon($request->input('horario_fim'));	
 
-		/* EMAIL EMAIL EMAIL
-		$condominos = $this->condominoRepository->all();
-		
-		$texto = 'Reservado área externa '.$areaExterna->nome.' para o condômino '.$condomino->nome.' no dia '.$this->dataInicio($request->input('horario_inicio')).' às '.$this->horaInicio($request->input('horario_inicio'));
+        $texto = 'Reservado área externa '.$areaExterna->nome.' para o condômino '.$condomino->nome.' no dia '.$this->dataInicio($request->input('horario_inicio')).' às '.$this->horaInicio($request->input('horario_inicio'));
+       
+        $subject = 'Reserva de área externa';
 
-        foreach ($condominos as $cond) {
-        	Mail::send('app::reservas.emailReserva', ['texto' => $texto], function($message) use ($cond) {
+        try {
 
-	        	$message->to($cond->email);
+	        $options = [
+	        'list_id'   => $this->listId,
+	        'subject' => $subject,
+	        'from_name' => 'VCCon',
+	        'from_email' => 'vc.con@yahoo.com',
+	        'to_name' => 'Condôminos'];
 
-	       		$message->subject('Reserva de área externa');
+	        $content = [
+	        'html' => $texto,
+	        'text' => strip_tags($texto)];
 
-    		});
+	        $campaign = $this->mailchimp->campaigns->create('regular', $options, $content);
+
+	        $this->mailchimp->campaigns->send($campaign['id']);
+
+        } catch (Exception $e) {
+
+        	return redirect()->back()->with('error','Error from MailChimp');
+
         }
-        */
 
 		$uuid = Uuid::generate();
 
@@ -145,6 +161,35 @@ class ReservaController extends AppBaseController
 
 		$startDate = new Carbon($request->input('horario_inicio'));
 		$endDate = new Carbon($request->input('horario_fim'));	
+
+		$texto = 'Alterado reserva de área externa '.$areaExterna->nome.' para o condômino '.$condomino->nome.' no dia '.$this->dataInicio($request->input('horario_inicio')).' às '.$this->horaInicio($request->input('horario_inicio'));
+       
+        $subject = 'Atualizada reserva de área externa';
+
+        /*try {
+
+	        $options = [
+	        'list_id'   => $this->listId,
+	        'subject' => $subject,
+	        'from_name' => 'VCCon',
+	        'from_email' => 'vc.con@yahoo.com',
+	        'to_name' => 'Condôminos'];
+
+	        $content = [
+	        'html' => $texto,
+	        'text' => strip_tags($texto)];
+
+	        $campaign = $this->mailchimp->campaigns->create('regular', $options, $content);
+
+	        $this->mailchimp->campaigns->send($campaign['id']);
+
+        } 
+
+        catch (Exception $e) {
+
+        	return redirect()->back()->with('error','Error from MailChimp');
+
+        }*/
 
 		$eventoId = $request->input('event_id');
 

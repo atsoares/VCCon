@@ -21,7 +21,7 @@
 
     <div class="form-group col-md-4">
         {!! Form::label('telefone', 'Telefone *', array('class' => 'text-red')) !!}
-        {!! Form::tel('telefone', null, array('class' => 'form-control')) !!}
+        {!! Form::tel('telefone', null, array('class' => 'form-control','maxlength'=>'12')) !!}
     </div>
 
     <div class="form-group col-md-2">

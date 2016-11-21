@@ -52,7 +52,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $router->group([
             'namespace' => 'VCCon\Applications\App\Http\Controllers',
-            'prefix' => 'vccon',
+            'prefix' => '',
             'middleware' => 'web',
         ], function ($router) {
             require app_path('Applications/App/Http/routes.php');

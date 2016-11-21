@@ -35,11 +35,6 @@
 							<i class="fa fa-search fa-fw" aria-hidden="true"></i>
 							VISUALIZAR
 						</a>
-
-						<a href="{{ route('unidades.edit', $unidade->id) }}" class="btn btn-xs btn-primary">
-							<i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>
-							EDITAR
-						</a>
 					</td>
 				</tr>
 			@empty

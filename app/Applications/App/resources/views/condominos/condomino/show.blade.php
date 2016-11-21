@@ -58,27 +58,14 @@
 		<ul class="timeline">
 			<li class="time-label">
 				<span class="bg-green">
-					10 Feb. 2014
+					{{ $condomino->present()->updatedAt() }}
 				</span>
 			</li>
 			<li>
 				<!-- timeline icon -->
 				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
 				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $condomino->present()->createdAt() }}</span>
-
-					<h3 class="timeline-header"><a href="#">Edição</a></h3>
-
-					<div class="timeline-body">
-						Descrição
-					</div>
-				</div>
-			</li>
-			<li>
-				<!-- timeline icon -->
-				<i class="fa fa-check bg-blue" aria-hidden="true"></i>
-				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> {{ $condomino->present()->createdAt() }}</span>
+					<span class="time"><i class="fa fa-clock-o"></i> {{ $condomino->present()->updatedAt() }}</span>
 
 					<h3 class="timeline-header"><a href="#">Edição</a></h3>
 
@@ -89,7 +76,7 @@
 			</li>
 			<li class="time-label">
 				<span class="bg-green">
-					10 Feb. 2014
+					{{ $condomino->present()->createdAt() }}
 				</span>
 			</li>
 			<li>

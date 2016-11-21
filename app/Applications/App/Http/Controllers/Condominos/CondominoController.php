@@ -16,14 +16,17 @@ class CondominoController extends AppBaseController
      */
 	private $CondominoRepository;
 	private $UnidadeRepository;
+	public $mailchimp;
+    public $listId = '0e5ec5601as';
 
 	/**
      * Função para injetar o objeto Condomino.
      *
      * @var string
      */
-	public function __construct(CondominoContract $CondominoRepository, UnidadeContract $UnidadeRepository)
+	public function __construct(\Mailchimp $mailchimp, CondominoContract $CondominoRepository, UnidadeContract $UnidadeRepository)
 	{
+		$this->mailchimp = $mailchimp;
 		$this->CondominoRepository = $CondominoRepository;
 		$this->UnidadeRepository = $UnidadeRepository;
 	}
@@ -60,6 +63,17 @@ class CondominoController extends AppBaseController
 		$inputs = $request->except('_token');
 
 		$unidade = $request->unidade_id;
+
+		/*try {
+            $this->mailchimp->lists->subscribe(
+                $this->listId,['email' => $request->input('email')]);
+        } 
+       
+        catch (\Mailchimp_List_AlreadySubscribed $e) {
+            return redirect()->route('condominos.index')->with('success','Email já existe');
+        } catch (\Mailchimp_Error $e) {
+            return redirect()->route('condominos.index')->with('success','Error com sistema MailChimp');
+        }*/
 
         $this->CondominoRepository->store($inputs);
 

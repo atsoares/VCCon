@@ -23,7 +23,7 @@
         "webpatser/laravel-uuid": "2.*",
         "mandrill/mandrill": "1.0.*",
         "guzzlehttp/guzzle": "*",
-        "skovmand/mailchimp-laravel": "^1.0"
+        "skovmand/mailchimp-laravel": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
