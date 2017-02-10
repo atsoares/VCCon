@@ -22,7 +22,7 @@ Route::group(['prefix' => 'unidades'],  function()
 		Route::get('{id}/remover', 		['as' => 'unidades.destroy', 'uses' => 'Unidades\UnidadeController@destroy']);
 	});
 
-Route::group(['prefix' => 'areas-externas'],  function()
+Route::group(['prefix' => 'areas-externas', 'middleware' => 'auth'],  function()
 	{
 		Route::get('', 					['as' => 'areasExternas.index',   'uses' => 'AreasExternas\AreaExternaController@index']);
 		Route::get('{id}/visualizar',	['as' => 'areasExternas.show',    'uses' => 'AreasExternas\AreaExternaController@show']);
@@ -33,7 +33,7 @@ Route::group(['prefix' => 'areas-externas'],  function()
 		Route::get('{id}/remover', 		['as' => 'areasExternas.destroy', 'uses' => 'AreasExternas\AreaExternaController@destroy']);
 	});
 
-Route::group(['prefix' => 'reservas'],  function()
+Route::group(['prefix' => 'reservas', 'middleware' => 'auth'],  function()
 	{
 		Route::get('', 					['as' => 'reservas.index',      'uses' => 'Reservas\ReservaController@index']);
 		Route::get('{id}/visualizar',	['as' => 'reservas.show',       'uses' => 'Reservas\ReservaController@show']);
